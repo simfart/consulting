@@ -16,12 +16,22 @@
   }
 
   &::before {
-    top: -4px;
-    height: 4px;
+    top: -16px;
   }
 
   &::after {
-    bottom: -4px;
+    bottom: -18px;
+  }
+
+  // Мобильная версия
+  @media (max-width: 768px) {
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
   }
 }
 
@@ -42,7 +52,7 @@
     }
 
     span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
+      transform: rotate(-45deg) translate(5px, -5px);
     }
   }
 }
@@ -72,8 +82,8 @@
   text-decoration: none;
 
   img {
-    width: 57px;
-    height: 57px;
+    width: 30px;
+    height: 30px;
     transition: transform 0.2s ease;
   }
 

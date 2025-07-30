@@ -1,15 +1,16 @@
 @use "../../../app/styles/mixins.scss" as *;
+@use "./mixins.scss" as *;
 
 .header {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.9);
+  background: $background-light;
   backdrop-filter: blur(10px);
 }
 
-.headerContent {
+.headerContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -17,14 +18,7 @@
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-
-  img {
-    width: 40px;
-    height: 40px;
-  }
+  @include logo-style;
 }
 
 .nav {
@@ -45,13 +39,12 @@
 }
 
 .navLink {
-  text-decoration: none;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.088;
   transition: color 0.2s ease;
-  position: relative;
   @include text-primary;
+  @include nav-link-style;
 
   &:hover {
     @include primary-color;
@@ -66,23 +59,14 @@
     }
   }
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 0;
-    height: 4px;
-    background: $color-secondary;
-    transition: width 0.2s ease;
-  }
-
   &::before {
-    top: -20px;
+    background: $color-secondary;
+    width: 0;
   }
 
   &::after {
-    bottom: -20px;
+    background: $color-secondary;
+    width: 0;
   }
 
   &:hover::before,
@@ -104,23 +88,10 @@
     width: 25px;
     height: 3px;
     background: #333;
-    transition: all 0.3s ease;
     border-radius: 2px;
   }
 
-  &.menuButtonOpen {
-    span:nth-child(1) {
-      transform: rotate(45deg) translate(6px, 6px);
-    }
-
-    span:nth-child(2) {
-      opacity: 0;
-    }
-
-    span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
-    }
-  }
+  @include hamburger-animation;
 }
 
 @media (max-width: 768px) {
@@ -129,17 +100,24 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: white;
+    background: $background-light;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+    justify-content: center;
 
     &.navOpen {
       transform: translateY(0);
       opacity: 1;
       visibility: visible;
+    }
+
+    .navLink {
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 1.088;
     }
   }
 
@@ -155,12 +133,8 @@
 
   .navLink {
     display: block;
-    padding: 1rem 2rem;
-    border-bottom: 1px solid #f0f0f0;
-
-    &:hover {
-      background: #f8f9fa;
-    }
+    padding: 8px 0;
+    margin-top: 8px;
   }
 
   .menuButton {
