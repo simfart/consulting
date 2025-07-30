@@ -1,0 +1,83 @@
+// Локальные миксины для компонента Header
+
+// Миксин для стилизации навигационных ссылок
+@mixin nav-link-style {
+  text-decoration: none;
+  position: relative;
+  display: block;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 2px;
+    transition: width 0.2s ease;
+  }
+
+  &::before {
+    top: -4px;
+    height: 4px;
+  }
+
+  &::after {
+    bottom: -4px;
+  }
+}
+
+// Миксин для анимации гамбургер-меню
+@mixin hamburger-animation {
+  span {
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  &.menuButtonOpen {
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+  }
+}
+
+// Миксин для мобильной навигации
+@mixin mobile-nav {
+  position: fixed;
+  top: 100%;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+
+  &.navOpen {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// Миксин для логотипа
+@mixin logo-style {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  img {
+    width: 57px;
+    height: 57px;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}

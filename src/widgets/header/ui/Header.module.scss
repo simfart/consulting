@@ -1,0 +1,169 @@
+@use "../../../app/styles/mixins.scss" as *;
+
+.header {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  margin: 0;
+}
+
+.navLink {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.088;
+  transition: color 0.2s ease;
+  position: relative;
+  @include text-primary;
+
+  &:hover {
+    @include primary-color;
+  }
+
+  &.navLinkActive {
+    @include primary-color;
+
+    &::before,
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: $color-secondary;
+    transition: width 0.2s ease;
+  }
+
+  &::before {
+    top: -20px;
+  }
+
+  &::after {
+    bottom: -20px;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.menuButton {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+
+  span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+
+  &.menuButtonOpen {
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+
+    &.navOpen {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .navList {
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem 0;
+  }
+
+  .navItem {
+    width: 100%;
+  }
+
+  .navLink {
+    display: block;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #f0f0f0;
+
+    &:hover {
+      background: #f8f9fa;
+    }
+  }
+
+  .menuButton {
+    display: flex;
+  }
+}
