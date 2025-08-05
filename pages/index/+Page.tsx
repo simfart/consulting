@@ -1,6 +1,7 @@
 import { Button } from "@/shared/ui";
 import { Card } from "@/shared/ui";
 import styles from "./+Page.module.scss";
+import { HeroSection } from "@/widgets/hero-section";
 
 const services = [
   {
@@ -29,6 +30,7 @@ export default function HomePage() {
   return (
     <>
       <div className={styles.homePage}>
+        <HeroSection />
         {/* Hero Section */}
         {/* <section className={styles.hero}>
           <div className="container">

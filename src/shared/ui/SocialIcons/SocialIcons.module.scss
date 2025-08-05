@@ -1,0 +1,88 @@
+@use "../../../app/styles/mixins.scss" as *;
+
+.socialIconsContainer {
+  width: 120px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 20px 0;
+  height: fit-content;
+}
+
+.socialIcons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.socialIcon {
+  width: 20px;
+  height: 20px;
+  color: #222220;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialIcon:hover {
+  color: #998861;
+}
+
+.followText {
+  font-family: "Archivo", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 2;
+  color: #66727e;
+  margin: 0;
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  text-align: center;
+}
+
+@include tablet {
+  .socialIconsContainer {
+    width: auto;
+  }
+}
+
+/* Адаптивность для мобильных устройств */
+@include mobile {
+  .socialIconsContainer {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    padding: 10px 0;
+  }
+
+  .socialIcons {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .followText {
+    writing-mode: horizontal-tb;
+    margin-left: 16px;
+  }
+}
+
+/* Адаптивность для очень маленьких экранов */
+@media (max-width: 480px) {
+  .socialIconsContainer {
+    gap: 12px;
+  }
+
+  .socialIcons {
+    gap: 16px;
+  }
+
+  .followText {
+    font-size: 14px;
+  }
+}

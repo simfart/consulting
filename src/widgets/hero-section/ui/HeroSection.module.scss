@@ -1,0 +1,217 @@
+@use "../../../app/styles/mixins.scss" as *;
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Основная сетка прямоугольников - блочная структура */
+.heroRectangles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  flex: 1;
+  box-sizing: border-box;
+  grid-auto-columns: 1fr;
+}
+
+/* Rectangle 56 - нижний левый */
+.rectangle56 {
+  grid-column: 1;
+  grid-row: 2;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Rectangle 58 - верхний средне-левый (коричневый блок) */
+.rectangle58 {
+  grid-column: 2;
+  grid-row: 1;
+  background-color: $color-primary;
+  aspect-ratio: 1;
+}
+
+/* Rectangle 59 - нижний правый */
+.rectangle59 {
+  grid-column: 4;
+  grid-row: 2;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Rectangle 57 - центральное большое изображение */
+.rectangle57 {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Центральный контент */
+.heroContent {
+  position: absolute;
+  left: 48%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  z-index: 10;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.heroTitle {
+  font-family: "Archivo", sans-serif;
+  font-weight: 500;
+  font-size: clamp(44px, 8vw, 60px);
+  line-height: 1.088;
+  text-align: center;
+  color: #18304b;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.heroButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 25px 16px 32px;
+  background-color: #998861;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.088;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #807556;
+    transform: translateY(-2px);
+  }
+
+  svg {
+    color: #ffffff;
+  }
+}
+
+/* Пустой блок слева */
+.leftSection {
+  position: relative;
+  z-index: 10;
+  margin-right: 20px;
+  align-self: center;
+  width: 60px; // Примерная ширина, аналогичная блоку с социальными иконками
+  height: 200px; // Примерная высота
+}
+
+/* Социальные иконки справа */
+.socialSection {
+  position: relative;
+  z-index: 10;
+  align-self: center;
+}
+
+/* Адаптивность для планшетов */
+@include tablet {
+  .heroSection {
+  }
+
+  .heroRectangles {
+  }
+  .heroContent {
+    gap: 20px;
+  }
+  .leftSection {
+    display: none;
+  }
+
+  .heroTitle {
+    font-size: clamp(36px, 6vw, 55px);
+  }
+}
+
+/* Адаптивность для мобильных устройств */
+@include mobile {
+  .heroSection {
+    flex-direction: column;
+  }
+
+  .heroRectangles {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    order: 2;
+  }
+
+  .heroContent {
+    padding: 0;
+    order: 1;
+  }
+
+  .heroTitle {
+    font-size: clamp(32px, 8vw, 48px);
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+  .leftSection {
+    position: relative;
+    margin: 20px 0;
+    order: 3;
+    width: auto;
+    height: auto;
+  }
+
+  .socialSection {
+    display: none;
+  }
+  .rectangle58,
+  .rectangle59,
+  .rectangle57 {
+    display: none;
+  }
+}
+
+/* Адаптивность для очень маленьких экранов */
+@media (max-width: 480px) {
+
+
+  .heroTitle {
+    font-size: clamp(28px, 6vw, 36px);
+  }
+
+  .heroButton {
+    padding: 12px 20px 12px 24px;
+    font-size: 14px;
+  }
+}
