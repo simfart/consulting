@@ -1,37 +1,31 @@
-import styles from "./HeroSection.module.scss";
+import { FC } from "react";
 import { heroImage1, heroImage2, heroImageMain } from "@/shared/images/figma";
 import { ArrowRight, SocialIcons } from "@/shared/ui";
+import styles from "./HeroSection.module.scss";
 
-export function HeroSection() {
+export const HeroSection: FC = () => {
   return (
     <section className={styles.heroSection}>
-      {/* Пустой блок слева */}
-      <div className={styles.leftSection}></div>
-
       {/* Основная сетка изображений */}
       <div className={styles.heroRectangles}>
-        {/* Rectangle 56 - нижний левый */}
-        <div className={styles.rectangle56}>
+        <div className={styles.leftSection}></div>
+
+        <div className={styles.bottomLeftSection}>
           <img src={heroImage1} alt="Business meeting" />
         </div>
+        <div className={styles.middleLeftSection}></div>
 
-        {/* Rectangle 58 - верхний средне-левый (коричневый блок) */}
-        <div className={styles.rectangle58}></div>
-
-        {/* Rectangle 59 - нижний правый */}
-        <div className={styles.rectangle59}>
+        <div className={styles.bottomRightSection}>
           <img src={heroImage2} alt="Marketing analytics" />
         </div>
 
-        {/* Rectangle 57 - центральное большое изображение */}
-        <div className={styles.rectangle57}>
+        <div className={styles.middleSection}>
           <img src={heroImageMain} alt="Marketing consultant working" />
         </div>
-      </div>
 
-      {/* Социальные иконки справа */}
-      <div className={styles.socialSection}>
-        <SocialIcons />
+        <div className={styles.socialSection}>
+          <SocialIcons />
+        </div>
       </div>
 
       {/* Центральный контент */}
@@ -48,4 +42,4 @@ export function HeroSection() {
       </div>
     </section>
   );
-}
+};

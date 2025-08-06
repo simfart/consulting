@@ -1,0 +1,129 @@
+@use "../../../app/styles/mixins.scss" as *;
+
+.advantageSection {
+  display: grid;
+  grid-template-columns: 50px repeat(4, 1fr) 50px;
+  grid-template-rows: 1fr;
+  flex: 1;
+  box-sizing: border-box;
+  grid-auto-columns: 1fr;
+  height: 600px;
+  gap: 0 1px;
+  background-color: rgba(138, 138, 138, 0.5);
+  position: relative;
+}
+
+.advantageSection > * {
+  //   box-shadow: inset -1px 0 0 rgba(138, 138, 138, 0.5);
+  background-color: $background-light;
+  //   box-sizing: border-box;
+  //   padding: 8px;
+}
+
+.textOverlay {
+  position: absolute;
+  top: 160px; // Отступ сверху
+  left: 0;
+  right: 0;
+  height: calc(100% - 160px);
+  display: grid;
+  grid-template-columns: 50px repeat(4, 1fr) 50px;
+  grid-template-rows: 1fr;
+  gap: 0 1px;
+  z-index: 10;
+}
+
+.textOverlay > * {
+  background-color: transparent;
+}
+
+.textContent {
+  grid-column: 3 / 6; // Растягиваем с 3-й по 6-ю колонку
+  background-color: $color-secondary; // #222220
+  padding: 60px 40px 60px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 400px;
+}
+
+.category {
+  @include font-medium;
+  @include text-sm;
+  color: $white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: $color-primary;
+  }
+}
+
+.headline {
+  @include font-bold;
+  @include text-3xl;
+  color: $white;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.description {
+  @include font-regular;
+  @include text-base;
+  color: rgba($white, 0.8);
+  margin: 0 0 30px 0;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  @include font-medium;
+  @include text-sm;
+  background-color: $color-primary; // #998861
+  color: $white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  @include transition-colors;
+  align-self: flex-start;
+  
+  &:hover {
+    background-color: darken($color-primary, 10%);
+  }
+}
+
+.arrow {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.accentBlock {
+  grid-column: 6; // 6-я колонка
+  background-color: $color-primary; // #998861
+}
+
+.advantageBackground {
+  grid-column: 3;
+  height: 100px;
+  background-color: $color-primary;
+}
+
+.advantageBackgroundText {
+  font-family: "Archivo", sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.088;
+  text-align: center;
+  color: #18304b;
+}
