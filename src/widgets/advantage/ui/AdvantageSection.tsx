@@ -4,12 +4,18 @@ import styles from "./AdvantageSection.module.scss";
 export const AdvantageSection: FC = () => {
   return (
     <section className={styles.advantageSection}>
-      <div className={styles.textOverlay}>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+      {/* Колоночная сетка (можно убрать потом) */}
+      <div className={styles.gridLines}>
+        <div className={styles.col}></div>
+        <div className={styles.col}></div>
+        <div className={styles.col}></div>
+        <div className={styles.col}></div>
+        <div className={styles.col}></div>
+        <div className={styles.col}></div>
+        <div className={styles.col}></div>
+        <div className={styles.col}></div>
+
+        {/* Основной контент */}
         <div className={styles.textContent}>
           <div className={styles.category}>OUR PREMISES</div>
           <h2 className={styles.headline}>
@@ -22,18 +28,11 @@ export const AdvantageSection: FC = () => {
             pellentesque felis nulla eros.
           </p>
           <button className={styles.ctaButton}>
-            View more
-            <span className={styles.arrow}>→</span>
+            View more <span className={styles.arrow}>→</span>
           </button>
         </div>
-        <div className={styles.accentBlock}></div>
       </div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div className={styles.accentBlock}></div>
     </section>
   );
 };
