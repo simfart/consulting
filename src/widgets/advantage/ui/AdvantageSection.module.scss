@@ -3,8 +3,7 @@
 .advantageSection {
   display: grid;
   grid-template-columns: 50px repeat(4, 1fr) 50px;
-  grid-template-rows: 160px auto;
-  height: 600px;
+  grid-template-rows: 160px 75px auto 75px;
   position: relative;
   background-color: $background-light;
 
@@ -18,19 +17,65 @@
   border-left: 1px solid rgba(138, 138, 138, 0.5);
 }
 
-.textContent {
-  grid-column: 3 / 5;
-  grid-row: 2;
-  background: $color-secondary;
-  padding: 60px 40px;
-  z-index: 2;
+.advantageImg {
+  grid-column: 2/4;
+  grid-row: 3;
+  z-index: 4;
   position: relative;
-  margin-right: -40px; // выходит за 5 колонку
+  height: 100%;
+  max-height: 450px;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+.darkBlock1,
+.darkBlock2,
+.darkBlock3,
+.darkBlock4,
+.darkBlock5,
+.darkBlock6 {
+  background: $color-secondary;
+  z-index: 2;
+}
+.darkBlock1 {
+  grid-column: 3;
+  grid-row: 2/5;
+}
+.darkBlock2 {
+  grid-column: 4;
+  grid-row: 2;
+  margin-right: -80%;
+}
+.darkBlock3 {
+  grid-row: 4;
+  grid-column: 4;
+  margin-right: -80%;
+}
+
+.textContent {
+  grid-column: 4 / 5;
+  grid-row: 3;
+  background: $color-secondary;
+  z-index: 3;
+  position: relative;
+  margin-right: -80%; // выходит за 5 колонку
+  padding: 15px 40px 0;
+}
+
+@include desktop {
+  .textContent,
+  .darkBlock2,
+  .darkBlock3 {
+    margin-right: -45%;
+  }
 }
 
 .accentBlock {
   grid-column: 5 / 7;
-  grid-row: 2;
+  grid-row: 2/5;
   background-color: $color-primary;
   z-index: 1;
   position: relative;

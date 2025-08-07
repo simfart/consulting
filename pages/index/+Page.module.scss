@@ -39,7 +39,7 @@
 .primaryButton {
   background: white !important;
   color: #667eea !important;
-  
+
   &:hover {
     background: #f8f9fa !important;
     transform: translateY(-2px);
@@ -49,7 +49,7 @@
 .secondaryButton {
   border-color: white !important;
   color: white !important;
-  
+
   &:hover {
     background: white !important;
     color: #667eea !important;
@@ -71,7 +71,7 @@
 .serviceCard {
   text-align: center;
   transition: transform 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-8px);
   }
@@ -129,7 +129,7 @@
   background: #f8f9fa;
   border-radius: 12px;
   transition: transform 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-4px);
   }
@@ -152,27 +152,27 @@
   .heroTitle {
     font-size: 2.5rem;
   }
-  
+
   .heroSubtitle {
     font-size: 1.1rem;
   }
-  
+
   .heroButtons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .aboutContent {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .aboutStats {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .servicesGrid {
     grid-template-columns: 1fr;
   }
-} 
+}

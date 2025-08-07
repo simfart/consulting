@@ -1,10 +1,11 @@
 import { FC } from "react";
 import styles from "./AdvantageSection.module.scss";
+import { advantageImg } from "@/shared/images/figma";
 
 export const AdvantageSection: FC = () => {
   return (
     <section className={styles.advantageSection}>
-      {/* Колоночная сетка (можно убрать потом) */}
+      {/* Колоночная сетка*/}
       <div className={styles.gridLines}>
         <div className={styles.col}></div>
         <div className={styles.col}></div>
@@ -14,21 +15,35 @@ export const AdvantageSection: FC = () => {
         <div className={styles.col}></div>
         <div className={styles.col}></div>
         <div className={styles.col}></div>
+        <div className={styles.col}></div>
+        <div className={styles.col}></div>
+        <div className={styles.col}></div>
 
-        {/* Основной контент */}
+        <div className={styles.advantageImg}>
+          <img src={advantageImg} alt="advantage" />
+        </div>
+
+        <div className={styles.darkBlock1}></div>
+        <div className={styles.darkBlock2}></div>
+        <div className={styles.darkBlock3}></div>
+
         <div className={styles.textContent}>
-          <div className={styles.category}>OUR PREMISES</div>
+          <div className={styles.category}>
+            Бухгалтерия без лишних затрат и привязки к офису
+          </div>
           <h2 className={styles.headline}>
-            Helping clients achieve a competitive advantage
+            Профессиональные бухгалтерские услуги для ИП и ООО
           </h2>
           <p className={styles.description}>
-            Aliquam aliquet duis odio diam malesuada amet vel neque. Malesuada
-            mi cum ibendum. Ultrices ultrices orci proin sit mauris diam a dolor
-            diam. Nisl a arcu placerat tellus at vitae non turpis. Nisi
-            pellentesque felis nulla eros.
+            Оказываем полный спектр бухгалтерских услуг для бизнеса: ведение
+            учёта, подготовка и сдача отчётности, налоговое планирование и
+            консультации. Наши специалисты следят за сроками, нормативами и
+            изменениями в законодательстве, чтобы вы могли спокойно заниматься
+            бизнесом. Прозрачно, точно и без лишних затрат — мы берём
+            бухгалтерию на себя.
           </p>
           <button className={styles.ctaButton}>
-            View more <span className={styles.arrow}>→</span>
+            Оставить заявку <span className={styles.arrow}>→</span>
           </button>
         </div>
       </div>
