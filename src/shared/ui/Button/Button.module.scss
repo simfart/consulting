@@ -4,11 +4,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
+
   @include font-semibold;
   @include transition-all;
   cursor: pointer;
-  border: 2px solid transparent;
+  border: none;
   @include shadow-sm;
 
   &:disabled {
@@ -21,103 +21,21 @@
   }
 }
 
-// Размеры
-.small {
-  padding: 8px 16px;
+.hero {
+  @include font-semibold;
   @include text-sm;
-}
-
-.medium {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   padding: 12px 24px;
-  @include text-base;
-}
-
-.large {
-  padding: 16px 32px;
-  @include text-lg;
-}
-
-// Варианты
-.primary {
-  @include gradient-primary;
-  color: white;
+  background-color: $color-primary;
+  color: $white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 
   &:hover:not(:disabled) {
-    @include hover-lift;
-    @include shadow-lg;
-  }
-}
-
-.secondary {
-  @include bg-tertiary;
-  @include text-primary;
-
-  &:hover:not(:disabled) {
-    background: #e9ecef;
-    @include hover-lift;
-    @include shadow-sm;
-  }
-}
-
-.outline {
-  background: transparent;
-  @include primary-color;
-  border-color: $color-primary;
-
-  &:hover:not(:disabled) {
-    @include primary-bg;
-    color: white;
-    @include hover-lift;
-    @include shadow-sm;
-  }
-}
-
-.accent {
-  @include accent-bg;
-  color: white;
-
-  &:hover:not(:disabled) {
-    background-color: $color-accent-dark;
-    @include hover-lift;
-    @include shadow-md;
-  }
-}
-
-.success {
-  @include success-bg;
-  color: white;
-
-  &:hover:not(:disabled) {
-    background-color: $color-success-dark;
-    @include hover-lift;
-    @include shadow-md;
-  }
-}
-
-.error {
-  @include error-bg;
-  color: white;
-
-  &:hover:not(:disabled) {
-    background-color: $color-error-dark;
-    @include hover-lift;
-    @include shadow-md;
-  }
-}
-
-// Адаптивность
-@include mobile {
-  .button {
-    padding: 10px 20px;
-    @include text-sm;
-    min-height: 44px;
-    min-width: 100px;
-  }
-
-  .large {
-    padding: 14px 28px;
-    @include text-base;
-    min-height: 52px;
-    min-width: 120px;
+    background-color: #807556;
+    transform: translateY(-2px);
   }
 }

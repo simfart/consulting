@@ -1,6 +1,7 @@
 import { FC } from "react";
 import styles from "./AdvantageSection.module.scss";
 import { advantageImg } from "@/shared/images/figma";
+import { Button } from "@/shared/ui";
 
 export const AdvantageSection: FC = () => {
   return (
@@ -42,9 +43,7 @@ export const AdvantageSection: FC = () => {
             бизнесом. Прозрачно, точно и без лишних затрат — мы берём
             бухгалтерию на себя.
           </p>
-          <button className={styles.ctaButton}>
-            Оставить заявку <span className={styles.arrow}>→</span>
-          </button>
+          <Button variant="hero">Оставить заявку</Button>
         </div>
       </div>
       <div className={styles.accentBlock}></div>

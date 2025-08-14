@@ -121,18 +121,15 @@
 }
 
 .heroButton {
+  @include font-semibold;
+  @include text-sm;
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 16px 25px 16px 32px;
-  background-color: #998861;
-  color: #ffffff;
+  padding: 12px 24px;
+  background-color: $color-primary;
+  color: $white;
   border: none;
-  border-radius: 8px;
-  font-family: "Archivo", sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 1.088;
   cursor: pointer;
   transition: all 0.3s ease;
 

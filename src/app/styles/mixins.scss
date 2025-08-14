@@ -233,8 +233,7 @@ $color-bg-tertiary: #f3f4f6;
 }
 
 @mixin text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  font-size: 16px;
 }
 
 @mixin text-base {

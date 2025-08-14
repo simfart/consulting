@@ -3,6 +3,7 @@ import { Card } from "@/shared/ui";
 import styles from "./+Page.module.scss";
 import { HeroSection } from "@/widgets/hero-section";
 import { AdvantageSection } from "@/widgets/advantage";
+import { Feedback } from "@/widgets/feedback";
 
 const services = [
   {
@@ -33,6 +34,8 @@ export default function HomePage() {
       <div className={styles.homePage}>
         <HeroSection />
         <AdvantageSection />
+        <Feedback />
+
         {/* Hero Section */}
         {/* <section className={styles.hero}>
           <div className="container">

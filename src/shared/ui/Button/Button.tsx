@@ -1,31 +1,26 @@
-import React from 'react'
-import styles from './Button.module.scss'
+import React from "react";
+import styles from "./Button.module.scss";
 
 interface ButtonProps {
-  children: React.ReactNode
-  variant?: 'primary' | 'secondary' | 'outline'
-  size?: 'small' | 'medium' | 'large'
-  onClick?: () => void
-  type?: 'button' | 'submit' | 'reset'
-  disabled?: boolean
-  className?: string
+  children: React.ReactNode;
+  variant?: "hero";
+  onClick?: () => void;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
+  className?: string;
 }
 
 export function Button({
   children,
-  variant = 'primary',
-  size = 'medium',
+  variant = "hero",
   onClick,
-  type = 'button',
+  type = "button",
   disabled = false,
-  className = ''
+  className = "",
 }: ButtonProps) {
-  const buttonClasses = [
-    styles.button,
-    styles[variant],
-    styles[size],
-    className
-  ].filter(Boolean).join(' ')
+  const buttonClasses = [styles.button, styles[variant], className]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <button
@@ -36,5 +31,5 @@ export function Button({
     >
       {children}
     </button>
-  )
-} 
+  );
+}
