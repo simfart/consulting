@@ -1,6 +1,6 @@
 // SCSS переменные для breakpoints
 $mobile-breakpoint: 767px;
-$tablet-breakpoint: 768px;
+$tablet-breakpoint: 900px;
 $desktop-breakpoint: 1280px;
 $large-desktop-breakpoint: 1440px;
 
@@ -19,7 +19,7 @@ $font-weight-bold: 700;
 }
 
 @mixin tablet {
-  @media (min-width: $tablet-breakpoint) and (max-width: #{$desktop-breakpoint - 1px}) {
+  @media (max-width: $tablet-breakpoint) {
     @content;
   }
 }
@@ -31,7 +31,7 @@ $font-weight-bold: 700;
 }
 
 @mixin tablet-up {
-  @media (min-width: $tablet-breakpoint) {
+  @media (max-width: $tablet-breakpoint) {
     @content;
   }
 }

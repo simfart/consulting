@@ -1,10 +1,13 @@
 import { FC, useRef, useState } from "react";
 import styles from "./Feedback.module.scss";
 import emailjs from "@emailjs/browser";
+import { ArrowRight, Button } from "@/shared/ui";
+import { PhoneInput } from "@/shared/ui/PhoneInput";
 
 export const Feedback: FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState(false);
+  const [phone, setPhone] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,7 +48,8 @@ export const Feedback: FC = () => {
                 required
               />
               <input type="email" name="email" placeholder="Email" required />
-              <input type="tel" name="phone" placeholder="Телефон" />
+              {/* <input type="tel" name="phone" placeholder="Телефон" /> */}
+              <PhoneInput value={phone} onChange={setPhone} />
 
               <select name="client_type" required>
                 <option value="">Тип клиента</option>
@@ -72,12 +76,14 @@ export const Feedback: FC = () => {
                 className={styles.inputMessage}
                 name="message"
                 placeholder="Комментарий"
-                rows={3}
+                rows={1}
               />
-
-              <button type="submit" disabled={loading}>
-                {loading ? "Отправка..." : "Отправить заявку"}
-              </button>
+              <div className={styles.feedbackButton}>
+                <Button type="submit" disabled={loading}>
+                  {loading ? "Отправка..." : "Отправить заявку"}
+                  <ArrowRight />
+                </Button>
+              </div>
             </form>
           </div>
         </div>
