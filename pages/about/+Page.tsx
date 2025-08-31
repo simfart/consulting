@@ -1,58 +1,58 @@
-import { Button } from '@/shared/ui';
-import { Card } from '@/shared/ui';
-import styles from './+Page.module.scss';
+import { Button } from "@/shared/ui";
+import { Card } from "@/shared/ui";
+import styles from "./+Page.module.scss";
 
 const team = [
   {
-    name: 'Анна Петрова',
-    position: 'Генеральный директор',
-    experience: '15 лет опыта в консалтинге',
-    avatar: '👩‍💼',
+    name: "Анна Петрова",
+    position: "Генеральный директор",
+    experience: "15 лет опыта в консалтинге",
+    avatar: "👩‍💼",
   },
   {
-    name: 'Михаил Сидоров',
-    position: 'Руководитель отдела стратегии',
-    experience: '12 лет в стратегическом планировании',
-    avatar: '👨‍💼',
+    name: "Михаил Сидоров",
+    position: "Руководитель отдела стратегии",
+    experience: "12 лет в стратегическом планировании",
+    avatar: "👨‍💼",
   },
   {
-    name: 'Елена Козлова',
-    position: 'Финансовый консультант',
-    experience: '10 лет в финансовом консалтинге',
+    name: "Елена Козлова",
+    position: "Финансовый консультант",
+    experience: "10 лет в финансовом консалтинге",
 
-    avatar: '👩‍💻',
+    avatar: "👩‍💻",
   },
   {
-    name: 'Дмитрий Волков',
-    position: 'Консультант по оптимизации',
-    experience: '8 лет в управленческом консалтинге',
-    avatar: '👨‍💻',
+    name: "Дмитрий Волков",
+    position: "Консультант по оптимизации",
+    experience: "8 лет в управленческом консалтинге",
+    avatar: "👨‍💻",
   },
 ];
 
 const values = [
   {
-    title: 'Профессионализм',
-    description: 'Высокие стандарты качества и глубокие знания в своей области',
-    icon: '🎯',
+    title: "Профессионализм",
+    description: "Высокие стандарты качества и глубокие знания в своей области",
+    icon: "🎯",
   },
   {
-    title: 'Индивидуальный подход',
+    title: "Индивидуальный подход",
     description:
-      'Каждый клиент уникален, и мы разрабатываем решения под конкретные задачи',
-    icon: '🤝',
+      "Каждый клиент уникален, и мы разрабатываем решения под конкретные задачи",
+    icon: "🤝",
   },
   {
-    title: 'Результативность',
+    title: "Результативность",
     description:
-      'Фокусируемся на достижении измеримых результатов для наших клиентов',
-    icon: '📈',
+      "Фокусируемся на достижении измеримых результатов для наших клиентов",
+    icon: "📈",
   },
   {
-    title: 'Инновации',
+    title: "Инновации",
     description:
-      'Используем современные методики и технологии для решения задач',
-    icon: '💡',
+      "Используем современные методики и технологии для решения задач",
+    icon: "💡",
   },
 ];
 
@@ -60,8 +60,9 @@ export default function AboutPage() {
   return (
     <>
       <div className={styles.aboutPage}>
+        <h2>тут будут цены</h2>
         {/* Hero Section */}
-        <section className={styles.hero}>
+        {/* <section className={styles.hero}>
           <div className='container'>
             <div className={styles.heroContent}>
               <h1 className={styles.heroTitle}>О компании КонсалтПро</h1>
@@ -71,10 +72,10 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Mission Section */}
-        <section className={`section ${styles.missionSection}`}>
+        {/* <section className={`section ${styles.missionSection}`}>
           <div className='container'>
             <div className={styles.missionContent}>
               <div className={styles.missionText}>
@@ -107,10 +108,10 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Values Section */}
-        <section className={`section ${styles.valuesSection}`}>
+        {/* <section className={`section ${styles.valuesSection}`}>
           <div className='container'>
             <h2 className='sectionTitle'>Наши ценности</h2>
             <p className='sectionSubtitle'>
@@ -127,10 +128,10 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Team Section */}
-        <section className={`section ${styles.teamSection}`}>
+        {/* <section className={`section ${styles.teamSection}`}>
           <div className='container'>
             <h2 className='sectionTitle'>Наша команда</h2>
             <p className='sectionSubtitle'>
@@ -148,10 +149,10 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* CTA Section */}
-        <section className={`section ${styles.ctaSection}`}>
+        {/* <section className={`section ${styles.ctaSection}`}>
           <div className='container'>
             <div className={styles.ctaContent}>
               <h2 className={styles.ctaTitle}>Готовы начать работу с нами?</h2>
@@ -163,7 +164,7 @@ export default function AboutPage() {
               </Button>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </>
   );

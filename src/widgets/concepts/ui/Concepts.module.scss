@@ -95,7 +95,7 @@
 
     p {
       @include font-regular;
-      @include text-sm;
+      @include text-base;
       color: $color-secondary;
       margin: 0;
       line-height: 1.5;

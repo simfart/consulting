@@ -8,8 +8,7 @@ export const HeroSection: FC = () => {
     <section className={styles.heroSection}>
       {/* Основная сетка изображений */}
       <div className={styles.heroRectangles}>
-        <div className={styles.leftSection}></div>
-
+        <div className={styles.topLeftSection}></div>
         <div className={styles.bottomLeftSection}>
           <img src={heroImage1} alt="Business meeting" />
         </div>

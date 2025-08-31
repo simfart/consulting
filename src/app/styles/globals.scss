@@ -25,6 +25,8 @@ body {
 }
 
 .app {
+  max-width: 1800px;
+  margin: 0 auto;
   min-height: 100vh;
   background: $background-light;
 }
@@ -123,4 +125,9 @@ body {
   .heading-lg {
     font-size: 48px;
   }
+}
+
+/* CSS переменные для изображений */
+:root {
+  --hero-image-1: url("/images/figma/hero-image-1.jpg");
 }

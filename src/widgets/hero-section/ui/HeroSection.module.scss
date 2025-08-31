@@ -15,12 +15,21 @@
   grid-template-columns: 50px repeat(4, 1fr) 50px;
   grid-template-rows: repeat(2, 1fr);
   flex: 1;
-  box-sizing: border-box;
   grid-auto-columns: 1fr;
   border-top: 1px solid rgba(138, 138, 138, 0.5);
   border-bottom: 1px solid rgba(138, 138, 138, 0.5);
 }
 
+.heroRectangles::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.208);
+  z-index: 1;
+}
 .bottomLeftSection {
   grid-column: 2;
   grid-row: 2;
@@ -72,13 +81,12 @@
   }
 }
 
-/* Пустой блок слева */
-.leftSection {
-  grid-column: 1;
-  grid-row: 1 / 3;
+.topLeftSection {
+  grid-column: 2;
+  grid-row: 1;
   overflow: hidden;
   position: relative;
-  border-right: 1px solid rgba(138, 138, 138, 0.5);
+  border-left: 1px solid rgba(138, 138, 138, 0.5);
 }
 
 /* Социальные иконки справа */
@@ -91,6 +99,7 @@
   align-items: center;
   justify-content: center;
   border-left: 1px solid rgba(138, 138, 138, 0.5);
+  z-index: 1;
 }
 
 /* Центральный контент */
@@ -183,23 +192,44 @@
   }
 
   .heroRectangles {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    order: 2;
+    display: none;
   }
 
   .heroContent {
-    padding: 0;
-    order: 1;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    padding: 120px 20px;
+
+    background-image: var(--hero-image-1);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    max-width: 100%;
+  }
+  .heroContent::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
   }
 
   .heroTitle {
     font-size: clamp(32px, 8vw, 48px);
     white-space: normal;
     line-height: 1.2;
+    color: #f9f9f9;
+    z-index: 1;
   }
-
+  .heroButton {
+    z-index: 1;
+  }
   .socialSection {
     display: none;
   }
