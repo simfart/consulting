@@ -48,9 +48,7 @@ export const Feedback: FC = () => {
                 required
               />
               <input type="email" name="email" placeholder="Email" required />
-              {/* <input type="tel" name="phone" placeholder="Телефон" /> */}
               <PhoneInput value={phone} onChange={setPhone} />
-
               <select name="client_type" required>
                 <option value="">Тип клиента</option>
                 <option value="Физлицо">Физлицо</option>

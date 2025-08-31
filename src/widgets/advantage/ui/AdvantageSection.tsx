@@ -47,6 +47,7 @@ export const AdvantageSection: FC = () => {
         </div>
       </div>
       <div className={styles.accentBlock}></div>
+      <div className={`${styles.col} ${styles.colLast}`}></div>
     </section>
   );
 };

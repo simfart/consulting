@@ -1,0 +1,157 @@
+@use "../../../app/styles/mixins.scss" as *;
+
+.concepts {
+  > .gridLines {
+    display: contents;
+  }
+
+  .vline {
+    width: 0; // чтобы не влиять на расчет колонок
+    border-left: 1px solid rgba(138, 138, 138, 0.5);
+  }
+
+  .gridLines {
+    display: grid;
+    grid-template-columns: 50px repeat(4, 1fr) 50px;
+    grid-template-rows: 75px auto auto auto auto;
+    position: relative;
+    background-color: $background-light;
+    grid-auto-columns: 1fr;
+    min-width: 0;
+    padding-bottom: 40px;
+  }
+
+  .content {
+    grid-column: 3/5;
+    grid-row: 2;
+    margin-left: -40%;
+    margin-right: -10%;
+    padding: 40px 40px;
+    border: 2px solid #998861;
+    background: $background-light;
+
+    .contentText {
+      @include font-medium;
+      @include text-sm;
+
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background-color: $color-primary;
+      }
+    }
+    h2 {
+      @include font-bold;
+      @include text-3xl;
+      color: $color-secondary;
+      margin: 0 0 20px 0;
+      line-height: 1.2;
+    }
+
+    p {
+      @include font-regular;
+      @include text-base;
+      color: $color-secondary;
+      margin: 0;
+      line-height: 1.6;
+    }
+  }
+  .services {
+    grid-column: 2 / 6;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto-fill;
+  }
+
+  .service {
+    border-left: 1px solid rgba(138, 138, 138, 0.5);
+    padding: 40px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+
+    h3 {
+      @include text-xl;
+      margin: 0 0 10px 0;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    p {
+      @include font-regular;
+      @include text-sm;
+      color: $color-secondary;
+      margin: 0;
+      line-height: 1.5;
+    }
+  }
+
+  .service6 {
+    border-right: 1px solid rgba(138, 138, 138, 0.5);
+  }
+}
+
+@include tablet {
+  .concepts {
+    .gridLines {
+      grid-template-columns: repeat(4, 1fr) 50px;
+    }
+
+    .content {
+      grid-column: 2/4;
+      margin-left: -40%;
+      margin-right: -10%;
+    }
+    .services {
+      grid-column: 1 / 5;
+    }
+  }
+}
+
+@include mobile {
+  .concepts {
+    .gridLines {
+      display: flex;
+      flex-direction: column;
+      padding: 100px 45px;
+    }
+    .content {
+      margin: 0;
+    }
+    .services {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      border: none;
+    }
+
+    .service {
+      border: none;
+    }
+    .vline {
+      display: none;
+    }
+  }
+}
+
+@include mobile-small {
+  .concepts {
+    padding: 70px 15px;
+  }
+}

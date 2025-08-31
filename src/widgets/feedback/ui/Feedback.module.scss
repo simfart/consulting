@@ -75,3 +75,30 @@
   display: flex;
   justify-content: end;
 }
+
+@include mobile {
+  .feedback {
+    display: flex;
+    flex-direction: column;
+    padding: 0 45px;
+    .col {
+      display: none;
+    }
+    .container {
+      border: none;
+    }
+    .content {
+      padding: 0;
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@include mobile-small {
+  .feedback {
+    padding: 0 15px;
+  }
+}

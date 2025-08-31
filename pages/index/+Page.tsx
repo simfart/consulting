@@ -4,29 +4,7 @@ import styles from "./+Page.module.scss";
 import { HeroSection } from "@/widgets/hero-section";
 import { AdvantageSection } from "@/widgets/advantage";
 import { Feedback } from "@/widgets/feedback";
-
-const services = [
-  {
-    title: "Стратегическое планирование",
-    description: "Разрабатываем долгосрочные стратегии развития вашего бизнеса",
-    icon: "📊",
-  },
-  {
-    title: "Оптимизация процессов",
-    description: "Повышаем эффективность бизнес-процессов и снижаем затраты",
-    icon: "⚡",
-  },
-  {
-    title: "Финансовый консалтинг",
-    description: "Помогаем оптимизировать финансовую структуру компании",
-    icon: "💰",
-  },
-  {
-    title: "Управленческий консалтинг",
-    description: "Улучшаем систему управления и повышаем производительность",
-    icon: "🎯",
-  },
-];
+import { Concepts } from "@/widgets/concepts";
 
 export default function HomePage() {
   return (
@@ -34,6 +12,7 @@ export default function HomePage() {
       <div className={styles.homePage}>
         <HeroSection />
         <AdvantageSection />
+        <Concepts />
         <Feedback />
 
         {/* Hero Section */}
