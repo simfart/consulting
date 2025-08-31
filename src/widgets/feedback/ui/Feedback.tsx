@@ -33,7 +33,7 @@ export const Feedback: FC = () => {
   };
 
   return (
-    <section className={styles.feedback}>
+    <section id="feedbackSection" className={styles.feedback}>
       <div className={styles.gridLines}>
         <div className={styles.col}></div>
 

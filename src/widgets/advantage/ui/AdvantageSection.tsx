@@ -5,7 +5,7 @@ import { Button } from "@/shared/ui";
 
 export const AdvantageSection: FC = () => {
   return (
-    <section className={styles.advantageSection}>
+    <section id="advantageSection" className={styles.advantageSection}>
       {/* Колоночная сетка*/}
       <div className={styles.gridLines}>
         <div className={styles.col}></div>
@@ -43,7 +43,16 @@ export const AdvantageSection: FC = () => {
             бизнесом. Прозрачно, точно и без лишних затрат — мы берём
             бухгалтерию на себя.
           </p>
-          <Button variant="hero">Оставить заявку</Button>
+          <Button
+            variant="hero"
+            onClick={() =>
+              document
+                .getElementById("feedbackSection")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            Оставить заявку
+          </Button>
         </div>
       </div>
       <div className={styles.accentBlock}></div>

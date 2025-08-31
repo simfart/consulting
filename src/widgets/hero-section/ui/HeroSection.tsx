@@ -34,7 +34,14 @@ export const HeroSection: FC = () => {
           <br />
           для ИП, ООО и самозанятых
         </h1>
-        <button className={styles.heroButton}>
+        <button
+          className={styles.heroButton}
+          onClick={() =>
+            document
+              .getElementById("advantageSection")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }
+        >
           <span>Подробнее</span>
           <ArrowRight />
         </button>
