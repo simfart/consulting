@@ -1,0 +1,54 @@
+@use "../../../app/styles/mixins.scss" as *;
+
+.geography {
+  border: 1px solid red;
+
+  > .gridLines {
+    display: contents;
+  }
+  .vline {
+    width: 0; // чтобы не влиять на расчет колонок
+    border-left: 1px solid rgba(138, 138, 138, 0.5);
+  }
+  .gridLines {
+    display: grid;
+    grid-template-columns: 50px repeat(4, 1fr) 50px;
+    grid-template-rows: 500px auto auto auto auto;
+    position: relative;
+    background-color: $background-light;
+    grid-auto-columns: 1fr;
+    min-width: 0;
+    padding-bottom: 40px;
+  }
+}
+
+.geographyImgWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.66); // белая вуаль
+    pointer-events: none;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.textBlock {
+  grid-column: 3/5;
+  grid-row: 1;
+  margin-left: -40%;
+  margin-right: -10%;
+  padding: 40px 40px;
+  border: 2px solid #998861;
+  background: transparent;
+  z-index: 3; // текст поверх всего
+}
