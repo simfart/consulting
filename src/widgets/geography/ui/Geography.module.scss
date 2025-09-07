@@ -9,11 +9,12 @@
   .vline {
     width: 0; // чтобы не влиять на расчет колонок
     border-left: 1px solid rgba(138, 138, 138, 0.5);
+    z-index: 3;
   }
   .gridLines {
     display: grid;
     grid-template-columns: 50px repeat(4, 1fr) 50px;
-    grid-template-rows: 500px auto auto auto auto;
+    grid-template-rows: 50px auto auto auto 50px;
     position: relative;
     background-color: $background-light;
     grid-auto-columns: 1fr;
@@ -23,8 +24,11 @@
 }
 
 .geographyImgWrapper {
-  position: absolute;
-  inset: 0;
+  grid-column: 3/6;
+  grid-row: 1/7;
+  // margin-left: -40%;
+  // position: absolute;
+  // inset: 0;
   z-index: 2;
 
   &::after {
@@ -37,18 +41,100 @@
 
   img {
     width: 100%;
-    height: auto;
-    display: block;
+
+    object-fit: contain;
   }
 }
 
-.textBlock {
-  grid-column: 3/5;
-  grid-row: 1;
-  margin-left: -40%;
-  margin-right: -10%;
+.geographyTextBlock {
+  grid-column: 3/4;
+  grid-row: 2;
+  margin-left: -80%;
   padding: 40px 40px;
   border: 2px solid #998861;
   background: transparent;
-  z-index: 3; // текст поверх всего
+  z-index: 3;
+
+  .geographySubtitle {
+    @include font-medium;
+    @include text-sm;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background-color: $color-primary;
+    }
+  }
+
+  h2 {
+    @include font-bold;
+    @include text-3xl;
+    color: $color-secondary;
+    margin: 0;
+    line-height: 1.2;
+  }
+}
+
+.geographyVariants {
+  list-style: none;
+  grid-row: 2/6;
+  grid-column: 4/6;
+
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(2, 1fr);
+  z-index: 3;
+
+  .variant {
+    border-left: 1px solid rgba(138, 138, 138, 0.5);
+  }
+  .variant0 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .variant1 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .variant2 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .variant3 {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .variant4 {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .variant5 {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  .text {
+    @include text-xl;
+    margin: 0 0 10px 0;
+    padding: 20px 20px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background-color: $color-primary;
+    }
+  }
 }

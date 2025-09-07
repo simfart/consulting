@@ -48,6 +48,7 @@ export function Header() {
         <img src={logoImg} alt="logo" />
       </a>
       <div className={styles.headerContent}>
+       
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ""}`}>
           <ul className={styles.navList}>
             {navigation.map((item) => {
