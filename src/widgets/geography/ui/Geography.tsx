@@ -14,31 +14,35 @@ const geographyVariants = [
 export const Geography: FC = () => {
   return (
     <section className={styles.geography}>
+      <div className={styles.geographyImgWrapper}>
+        <img
+          className={styles.geographyImg}
+          src={geographyImg}
+          alt="geography"
+        />
+      </div>
       <div className={styles.gridLines}>
-        {Array.from({ length: 20 }).map((_, i) => (
+        {Array.from({ length: 22 }).map((_, i) => (
           <div key={i} className={styles.vline} />
         ))}
-        <div className={styles.geographyImgWrapper}>
-          <img
-            className={styles.geographyImg}
-            src={geographyImg}
-            alt="geography"
-          />
-        </div>
+
         <div className={styles.geographyTextBlock}>
-          <p className={styles.geographySubtitle}>География обслуживания</p>
-          <h2>Работаем с бизнесом в Крыму и новых регионах РФ</h2>
+          <div className={styles.geographyContent}>
+            <p>География обслуживания</p>
+            <h2>Работаем с бизнесом в Крыму и новых регионах РФ</h2>
+          </div>
         </div>
-        <ul className={styles.geographyVariants}>
-          {geographyVariants.map((variant, index) => (
-            <li
-              key={index}
-              className={`${styles.variant} ${styles["variant" + index]}`}
-            >
-              <p className={styles.text}>{variant.text}</p>
-            </li>
-          ))}
-        </ul>
+
+        {geographyVariants.map((variant, index) => (
+          <div
+            key={index}
+            className={`${styles.geographyVariant} ${
+              styles["geographyVariant" + index]
+            }`}
+          >
+            <p className={styles.geographyText}>{variant.text}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
