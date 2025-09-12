@@ -6,20 +6,16 @@
   grid-template-rows: 160px 75px auto 75px;
   position: relative;
   background-color: $background-light;
-  // Обеспечиваем равномерное распределение колонок
   grid-auto-columns: 1fr;
-  // Предотвращаем сжатие колонок
   min-width: 0;
 
-  // Чтобы колонки с линиями были позади
   > .gridLines {
-    display: contents; // Важно: дочерние div-ы попадут в grid
+    display: contents;
   }
 }
 
 .col {
   border-left: 1px solid rgba(138, 138, 138, 0.5);
-  // Обеспечиваем равномерную ширину
   min-width: 0;
   width: 100%;
 }
@@ -31,7 +27,6 @@
   position: relative;
   height: 100%;
   max-height: 450px;
-  // Предотвращаем влияние на ширину колонок
   min-width: 0;
   img {
     height: 100%;
@@ -70,9 +65,8 @@
   background: $color-secondary;
   z-index: 3;
   position: relative;
-  margin-right: -80%; // выходит за 5 колонку
+  margin-right: -80%;
   padding: 15px 40px 0;
-  // Предотвращаем влияние на ширину колонок
   min-width: 0;
   box-sizing: border-box;
 }
@@ -209,7 +203,8 @@
   .accentBlock,
   .darkBlock1,
   .darkBlock2,
-  .darkBlock3 {
+  .darkBlock3,
+  .col {
     display: none;
   }
   .textContent {

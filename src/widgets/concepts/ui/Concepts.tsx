@@ -8,6 +8,7 @@ import {
   conceptImg5,
   conceptImg6,
   conceptImg7,
+  geographyImg,
 } from "@/shared/images";
 
 const servicesVariants = [
@@ -51,6 +52,13 @@ const servicesVariants = [
 export const Concepts: FC = () => {
   return (
     <section className={styles.concepts}>
+      <div className={styles.geographyImgWrapper}>
+        <img
+          className={styles.geographyImg}
+          src={geographyImg}
+          alt="geography"
+        />
+      </div>
       <div className={styles.gridLines}>
         {Array.from({ length: 10 }).map((_, i) => (
           <div key={i} className={styles.vline} />
@@ -59,8 +67,13 @@ export const Concepts: FC = () => {
           <div className={styles.contentText}>Наши услуги</div>
           <h2>Бухгалтерский консалтинг</h2>
           <p>
-            Оказываем полный спектр бухгалтерских услуг и консультаций по
-            налогам и финансам для бизнеса и частных клиентов.
+            Полный спектр бухгалтерских услуг и консультаций по налогам и
+            финансам для бизнеса и частных клиентов. Мы работаем в Республике
+            Крым (Симферополь, Севастополь, Ялта и другие города), а также в
+            новых регионах РФ — Донецкой и Луганской Народных Республиках,
+            Запорожской и Херсонской областях. Клиенты из любых регионов России
+            получают профессиональную поддержку без ограничений по месту ведения
+            бизнеса.
           </p>
         </div>
         <div className={styles.services}>

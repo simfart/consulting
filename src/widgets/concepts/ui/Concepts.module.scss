@@ -1,34 +1,51 @@
 @use "../../../app/styles/mixins.scss" as *;
 
 .concepts {
+  position: relative;
+  overflow: hidden;
+
   > .gridLines {
     display: contents;
   }
+  .geographyImgWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
 
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+
+      opacity: 0.2;
+    }
+  }
   .vline {
-    width: 0; // чтобы не влиять на расчет колонок
+    width: 0;
     border-left: 1px solid rgba(138, 138, 138, 0.5);
+    z-index: 2;
   }
 
   .gridLines {
     display: grid;
     grid-template-columns: 50px repeat(4, 1fr) 50px;
-    grid-template-rows: 75px auto auto auto auto;
+    grid-template-rows: 100px auto auto auto auto;
     position: relative;
-    background-color: $background-light;
     grid-auto-columns: 1fr;
     min-width: 0;
-    padding-bottom: 40px;
+    z-index: 2;
   }
 
   .content {
     grid-column: 3/5;
     grid-row: 2;
     margin-left: -40%;
-    margin-right: -10%;
     padding: 40px 40px;
     border: 2px solid #998861;
-    background: $background-light;
 
     .contentText {
       @include font-medium;
@@ -70,6 +87,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto-fill;
+    z-index: 2;
   }
 
   .service {
@@ -87,10 +105,8 @@
 
     h3 {
       @include text-xl;
+      @include font-regular;
       margin: 0 0 10px 0;
-      font-weight: 300;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
     p {
@@ -102,45 +118,96 @@
     }
   }
 
+  .service4,
+  .service5,
+  .service6 {
+    padding-top: 0;
+  }
+
   .service6 {
     border-right: 1px solid rgba(138, 138, 138, 0.5);
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .concepts {
+    .content {
+      grid-column: 3/6;
+      margin-left: -20%;
+      margin-right: 10%;
+      padding: 20px 20px;
+    }
+  }
+}
+
 @include tablet {
   .concepts {
+    .geographyImgWrapper {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      img {
+        height: auto; 
+      }
+    }
     .gridLines {
       grid-template-columns: repeat(4, 1fr) 50px;
     }
 
     .content {
-      grid-column: 2/4;
-      margin-left: -40%;
-      margin-right: -10%;
+      grid-column: 1/5;
+      margin-left: 10%;
+      margin-right: 0;
     }
     .services {
       grid-column: 1 / 5;
+    }
+
+    .service {
+      padding: 20px 20px;
+    }
+
+    .service0 {
+      grid-column: 1/3;
+    }
+    .service1 {
+      grid-column: 3/5;
+    }
+    .service2 {
+      grid-column: 1/3;
+    }
+    .service3 {
+      grid-column: 3/5;
+    }
+    .service4 {
+      grid-column: 1/3;
+    }
+    .service5 {
+      grid-column: 3/5;
+    }
+    .service6 {
+      grid-column: 1/3;
     }
   }
 }
 
 @include mobile {
   .concepts {
+    padding: 0 45px;
+
     .gridLines {
       display: flex;
       flex-direction: column;
-      padding: 100px 45px;
     }
     .content {
-      margin: 0;
+      margin: 0 0 15px 0;
     }
     .services {
       display: flex;
       flex-direction: column;
-      gap: 20px;
       border: none;
     }
-
     .service {
       border: none;
     }
@@ -152,6 +219,10 @@
 
 @include mobile-small {
   .concepts {
-    padding: 70px 15px;
+    padding: 0 15px;
+
+    .service {
+      padding: 15px 0;
+    }
   }
 }

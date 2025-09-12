@@ -5,7 +5,6 @@ import { HeroSection } from "@/widgets/hero-section";
 import { AdvantageSection } from "@/widgets/advantage";
 import { Feedback } from "@/widgets/feedback";
 import { Concepts } from "@/widgets/concepts";
-import { Geography } from "@/widgets/geography";
 
 export default function HomePage() {
   return (
@@ -13,7 +12,7 @@ export default function HomePage() {
       <div className={styles.homePage}>
         <HeroSection />
         <AdvantageSection />
-        <Geography />
+        {/* <Geography /> */}
         <Concepts />
         <Feedback />
 
