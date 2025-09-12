@@ -44,7 +44,7 @@
 
   &.menuButtonOpen {
     span:nth-child(1) {
-      transform: rotate(45deg) translate(6px, 6px);
+      transform: rotate(45deg) translate(5px, 5px);
     }
 
     span:nth-child(2) {
@@ -57,7 +57,6 @@
   }
 }
 
-// Миксин для мобильной навигации
 @mixin mobile-nav {
   position: fixed;
   top: 100%;
