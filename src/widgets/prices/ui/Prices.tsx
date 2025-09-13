@@ -1,6 +1,5 @@
 import { FC } from "react";
 import styles from "./Prices.module.scss";
-import { ArrowRight, Button } from "@/shared/ui";
 
 export const Prices: FC = () => {
   const plans = [
@@ -50,19 +49,6 @@ export const Prices: FC = () => {
                 {plan.price}
               </div>
               <p className={styles.features}>{plan.features}</p>
-              <div className={styles.buttonContainer}>
-                {" "}
-                <Button
-                  variant="hero"
-                  onClick={() =>
-                    document
-                      .getElementById("feedbackSection")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                >
-                  Подробнее <ArrowRight />
-                </Button>
-              </div>
             </div>
           ))}
         </div>
