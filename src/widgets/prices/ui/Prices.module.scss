@@ -23,7 +23,7 @@
 .priceContent {
   position: relative;
   z-index: 2;
-  padding: 100px 0;
+  padding: 100px 0 0;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -129,7 +129,7 @@
 @include tablet {
   .prices {
     .gridLines {
-      grid-template-columns: repeat(2, 1fr) 50px;
+      grid-template-columns: 1fr 50px;
     }
   }
 }

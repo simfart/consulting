@@ -41,52 +41,46 @@ export const Feedback: FC = () => {
       </div>
 
       <div className={styles.container}>
-        <div className={styles.content}>
-          <h2 className={styles.title}>Заказать консультацию</h2>
-          <form ref={formRef} className={styles.form} onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Имя / Компания"
-              required
-            />
-            <input type="email" name="email" placeholder="Email" required />
-            <PhoneInput value={phone} onChange={setPhone} />
-            <select name="client_type" required>
-              <option value="">Тип клиента</option>
-              <option value="Физлицо">Физлицо</option>
-              <option value="ИП">ИП</option>
-              <option value="ООО">ООО</option>
-            </select>
+        <h2 className={styles.title}>Заказать консультацию</h2>
+        <form ref={formRef} className={styles.form} onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Имя / Компания"
+            required
+          />
+          <input type="email" name="email" placeholder="Email" required />
+          <PhoneInput value={phone} onChange={setPhone} />
+          <select name="client_type" required>
+            <option value="">Тип клиента</option>
+            <option value="Физлицо">Физлицо</option>
+            <option value="ИП">ИП</option>
+            <option value="ООО">ООО</option>
+          </select>
 
-            <input
-              type="text"
-              name="industry"
-              placeholder="Сфера деятельности"
-            />
+          <input type="text" name="industry" placeholder="Сфера деятельности" />
 
-            <select name="transactions_count" required>
-              <option value="">Кол-во операций в месяц</option>
-              <option value="До 10">До 10</option>
-              <option value="10-50">10-50</option>
-              <option value="50-200">50-200</option>
-              <option value="200+">200+</option>
-            </select>
+          <select name="transactions_count" required>
+            <option value="">Кол-во операций в месяц</option>
+            <option value="До 10">До 10</option>
+            <option value="10-50">10-50</option>
+            <option value="50-200">50-200</option>
+            <option value="200+">200+</option>
+          </select>
 
-            <textarea
-              className={styles.inputMessage}
-              name="message"
-              placeholder="Комментарий"
-              rows={1}
-            />
-            <div className={styles.feedbackButton}>
-              <Button type="submit" disabled={loading}>
-                {loading ? "Отправка..." : "Отправить заявку"}
-                <ArrowRight />
-              </Button>
-            </div>
-          </form>
-        </div>
+          <textarea
+            className={styles.inputMessage}
+            name="message"
+            placeholder="Комментарий"
+            rows={1}
+          />
+          <div className={styles.feedbackButton}>
+            <Button type="submit" disabled={loading}>
+              {loading ? "Отправка..." : "Отправить заявку"}
+              <ArrowRight />
+            </Button>
+          </div>
+        </form>
       </div>
     </section>
   );
