@@ -1,0 +1,64 @@
+.tariffs {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 2rem;
+  background: #f9fafb;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  overflow-x: auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #2d3748;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+
+  th,
+  td {
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
+
+  th {
+    background: #edf2f7;
+    font-weight: 600;
+    color: #2d3748;
+  }
+
+  tr:nth-child(even) td {
+    background: #f7fafc;
+  }
+}
+
+.priceRow {
+  background: #e6fffa !important;
+  font-weight: 700;
+  color: #2c7a7b;
+
+  td {
+    background: #e6fffa !important;
+  }
+}
