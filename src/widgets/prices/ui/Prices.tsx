@@ -29,7 +29,8 @@ export const Prices: FC = () => {
   return (
     <section className={styles.prices}>
       <div className={styles.gridLines}>
-        {Array.from({ length: 6 }).map((_, i) => (
+        <div className={styles.vlineNoBorder}></div>
+        {Array.from({ length: 5 }).map((_, i) => (
           <div key={i} className={styles.vline} />
         ))}
       </div>

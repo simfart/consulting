@@ -21,9 +21,13 @@
       width: 100%;
       height: auto;
       object-fit: contain;
-
       opacity: 0.2;
     }
+  }
+
+  .vlineNoBorder {
+    grid-column: 1;
+    grid-row: 1/3;
   }
   .vline {
     width: 0;

@@ -5,8 +5,7 @@ import { logoImg } from "@/shared/images";
 
 const navigation = [
   { name: "Главная", href: "/" },
-  { name: "Сколько денег", href: "/about" },
-  { name: "Новости", href: "/news" },
+  { name: "Услуги и тарифы", href: "/about" },
 ];
 
 export function Header() {
@@ -48,7 +47,9 @@ export function Header() {
         <img src={logoImg} alt="logo" />
       </a>
       <div className={styles.headerContent}>
-       
+        <div className={styles.headerTitle}>
+          <h3>Консалт</h3> <span>Центр</span>
+        </div>
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ""}`}>
           <ul className={styles.navList}>
             {navigation.map((item) => {
@@ -84,6 +85,7 @@ export function Header() {
           <span></span>
         </button>
       </div>
+      <div className={styles.headerVline}></div>
     </header>
   );
 }

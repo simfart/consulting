@@ -16,6 +16,12 @@
   backdrop-filter: blur(10px);
 }
 
+.headerVline {
+  grid-column: 3;
+  border-left: 1px solid rgba(138, 138, 138, 0.5);
+  height: 100%;
+}
+
 .logo {
   @include logo-style;
   justify-self: center;
@@ -25,7 +31,31 @@
 .headerContent {
   grid-column: 2;
   border-left: 1px solid rgba(138, 138, 138, 0.5);
-  padding: 18px 0;
+  padding: 18px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.headerTitle {
+  display: flex;
+  flex-direction: row;
+
+  line-height: 1;
+
+  h3 {
+    margin: 0;
+  }
+
+  span {
+    color: $color-primary;
+  }
+
+  h3,
+  span {
+    font-size: 24px;
+    font-weight: 400;
+  }
 }
 .nav {
   display: flex;
@@ -49,7 +79,7 @@
   font-size: 20px;
   line-height: 1.088;
   transition: color 0.2s ease;
-  @include text-primary;
+  @include secondary-color;
   @include nav-link-style;
 
   &:hover {
@@ -106,8 +136,17 @@
     justify-content: space-between;
     padding: 0 15px;
   }
+
+  .headerVline {
+    display: none;
+  }
+
+  .headerTitle {
+    display: none;
+  }
   .headerContent {
     border: none;
+    padding: 10px 0 10px;
   }
   .nav {
     position: fixed;

@@ -64,28 +64,6 @@ $white: #ffffff;
 $background-light: #f5f6f3;
 $border-color: #d9d9d9;
 
-// не используется
-$color-primary-dark: #1d4ed8;
-
-$color-secondary-dark: #475569;
-$color-accent: #f59e0b;
-$color-accent-dark: #d97706;
-$color-success: #10b981;
-$color-success-dark: #059669;
-$color-error: #ef4444;
-$color-error-dark: #dc2626;
-$color-warning: #f97316;
-$color-warning-dark: #ea580c;
-
-$color-text-primary: #1f2937;
-$color-text-secondary: #6b7280;
-$color-text-muted: #9ca3af;
-
-$color-bg-primary: #ffffff;
-$color-bg-secondary: #f9fafb;
-$color-bg-tertiary: #f3f4f6;
-
-// Цветовые миксины
 @mixin primary-color {
   color: $color-primary;
 }
@@ -134,10 +112,6 @@ $color-bg-tertiary: #f3f4f6;
   background-color: $color-warning;
 }
 
-@mixin text-primary {
-  color: $color-text-primary;
-}
-
 @mixin text-secondary {
   color: $color-text-secondary;
 }
@@ -158,49 +132,9 @@ $color-bg-tertiary: #f3f4f6;
   background-color: $color-bg-tertiary;
 }
 
-// Градиентные миксины
-@mixin gradient-primary {
-  background: linear-gradient(
-    135deg,
-    $color-primary 0%,
-    $color-primary-dark 100%
-  );
-}
-
-@mixin gradient-secondary {
-  background: linear-gradient(
-    135deg,
-    $color-secondary 0%,
-    $color-secondary-dark 100%
-  );
-}
-
-@mixin gradient-accent {
-  background: linear-gradient(
-    135deg,
-    $color-accent 0%,
-    $color-accent-dark 100%
-  );
-}
-
 // Тень миксины
 @mixin shadow-sm {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-}
-
-@mixin shadow-md {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-@mixin shadow-lg {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-@mixin shadow-xl {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 // Анимация миксины
@@ -211,26 +145,6 @@ $color-bg-tertiary: #f3f4f6;
 @mixin transition-colors {
   transition: color 0.3s ease, background-color 0.3s ease,
     border-color 0.3s ease;
-}
-
-@mixin transition-transform {
-  transition: transform 0.3s ease;
-}
-
-@mixin hover-lift {
-  @include transition-transform;
-
-  &:hover {
-    transform: translateY(-2px);
-  }
-}
-
-@mixin hover-scale {
-  @include transition-transform;
-
-  &:hover {
-    transform: scale(1.05);
-  }
 }
 
 // Типографика миксины
@@ -274,12 +188,6 @@ $color-bg-tertiary: #f3f4f6;
 }
 
 // Фокус миксины
-@mixin focus-ring {
-  &:focus {
-    outline: 2px solid $color-primary;
-    outline-offset: 2px;
-  }
-}
 
 @mixin focus-ring-offset {
   &:focus {
@@ -311,28 +219,4 @@ $color-bg-tertiary: #f3f4f6;
   font-family: $font-family-primary;
   font-weight: $font-weight-bold;
   font-style: normal;
-}
-
-@mixin font-italic {
-  font-family: $font-family-primary;
-  font-weight: $font-weight-regular;
-  font-style: italic;
-}
-
-@mixin font-medium-italic {
-  font-family: $font-family-primary;
-  font-weight: $font-weight-medium;
-  font-style: italic;
-}
-
-@mixin font-semibold-italic {
-  font-family: $font-family-primary;
-  font-weight: $font-weight-semibold;
-  font-style: italic;
-}
-
-@mixin font-bold-italic {
-  font-family: $font-family-primary;
-  font-weight: $font-weight-bold;
-  font-style: italic;
 }

@@ -6,19 +6,11 @@ import { Button } from "@/shared/ui";
 export const AdvantageSection: FC = () => {
   return (
     <section id="advantageSection" className={styles.advantageSection}>
-      {/* Колоночная сетка*/}
       <div className={styles.gridLines}>
-        <div className={styles.col}></div>
-        <div className={styles.col}></div>
-        <div className={styles.col}></div>
-        <div className={styles.col}></div>
-        <div className={styles.col}></div>
-        <div className={styles.col}></div>
-        <div className={styles.col}></div>
-        <div className={styles.col}></div>
-        <div className={styles.col}></div>
-        <div className={styles.col}></div>
-        <div className={styles.col}></div>
+        <div className={styles.colNoLine}></div>
+        {Array.from({ length: 6 }).map((_, i) => (
+          <div key={i} className={styles.col} />
+        ))}
 
         <div className={styles.advantageImg}>
           <img src={advantageImg} alt="advantage" />

@@ -19,6 +19,10 @@
   min-width: 0;
   width: 100%;
 }
+.colNoLine {
+  grid-column: 1;
+  grid-row: 1/5;
+}
 
 .advantageImg {
   grid-column: 2/4;

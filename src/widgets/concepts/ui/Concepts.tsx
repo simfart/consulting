@@ -60,6 +60,7 @@ export const Concepts: FC = () => {
         />
       </div>
       <div className={styles.gridLines}>
+        <div className={styles.vlineNoBorder}></div>
         {Array.from({ length: 10 }).map((_, i) => (
           <div key={i} className={styles.vline} />
         ))}

@@ -1,6 +1,6 @@
-import heroImage1 from "./6.jpg";
-import heroImage2 from "./hero-image-2.jpg";
-import heroImageMain from "./4.jpg";
-import advantageImg from "./2.2.jpg";
+import heroImage1 from "./6.webp";
+import heroImage2 from "./2.4.webp"
+import heroImageMain from "./4.webp";
+import advantageImg from "./2.2.webp";
 
 export { heroImage1, heroImage2, heroImageMain, advantageImg };
