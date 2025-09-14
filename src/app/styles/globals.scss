@@ -20,6 +20,19 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Обеспечиваем правильное масштабирование на мобильных устройствах */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Улучшаем рендеринг шрифтов на мобильных устройствах */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 #root {
   min-height: 100vh;
 }
@@ -45,5 +58,5 @@ body {
 
 /* CSS переменные для изображений */
 :root {
-  --hero-image-1: url("/images/4cut5.webp");
+  --hero-image-1: url("/images/2.1.jpg");
 }
