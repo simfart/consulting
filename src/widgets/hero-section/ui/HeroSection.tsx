@@ -1,9 +1,34 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { heroImage1, heroImage2, heroImageMain } from "@/shared/images/figma";
 import { ArrowRight, SocialIcons } from "@/shared/ui";
 import styles from "./HeroSection.module.scss";
 
 export const HeroSection: FC = () => {
+  useEffect(() => {
+    const heroBg = document.querySelector<HTMLElement>(`.${styles.heroBg}`);
+    if (!heroBg) return;
+
+    let ticking = false;
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const rect = heroBg.parentElement!.getBoundingClientRect();
+          const offset = Math.min(
+            (window.scrollY - rect.top) * 0.2,
+            rect.height * 0.3
+          );
+          heroBg.style.transform = `translateY(${offset}px)`;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <section className={styles.heroSection}>
       {/* Основная сетка изображений */}
@@ -13,22 +38,24 @@ export const HeroSection: FC = () => {
           <img src={heroImage1} alt="Business meeting" />
         </div>
         <div className={styles.middleLeftSection}></div>
-
         <div className={styles.bottomRightSection}>
           <img src={heroImage2} alt="Marketing analytics" />
         </div>
-
         <div className={styles.middleSection}>
           <img src={heroImageMain} alt="Marketing consultant working" />
         </div>
-
         <div className={styles.socialSection}>
           <SocialIcons />
         </div>
       </div>
 
-      {/* Центральный контент */}
+      {/* Центральный контент с фоном */}
       <div className={styles.heroContent}>
+        <div
+          className={styles.heroBg}
+          style={{ backgroundImage: `url(${heroImageMain})` }}
+        ></div>
+
         <h1 className={styles.heroTitle}>
           Бухгалтерские услуги
           <br />

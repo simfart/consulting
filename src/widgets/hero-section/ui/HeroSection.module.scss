@@ -187,36 +187,51 @@
 
 /* Адаптивность для мобильных устройств */
 @include mobile {
-  .heroSection {
-    flex-direction: column;
-  }
-
   .heroRectangles {
     display: none;
   }
 
-  .heroContent {
+  .heroSection {
     position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .heroContent {
+    top: 200px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 600px;
+
+    padding: 120px 20px;
+    text-align: center;
+  }
+
+  /* Фон внутри контента */
+  .heroBg {
+    position: absolute;
     top: 0;
     left: 0;
-    transform: none;
     width: 100%;
-    padding: 120px 20px;
-    background-image: var(--hero-image-1);
+    height: 100%;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    max-width: 100%;
+    z-index: -1;
+    transform: translateY(0);
   }
-  .heroContent::before {
+
+  .heroBg::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* затемнение */
+    z-index: 0;
   }
 
   .heroTitle {
