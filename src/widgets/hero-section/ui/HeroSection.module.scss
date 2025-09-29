@@ -199,14 +199,32 @@
     align-items: center;
   }
 
-  .heroContent {
-    top: 200px;
-    position: relative;
-    z-index: 1;
-    width: 100%;
+  // .heroContent {
+  //   top: 200px;
+  //   position: relative;
+  //   z-index: 1;
+  //   width: 100%;
 
-    padding: 120px 20px;
+  //   padding: 120px 20px;
+  //   text-align: center;
+  // }
+
+  .heroContent {
+    position: relative; // убираем absolute
+    top: 0;
+    left: 0;
+    width: 100vw;
+    max-width: 100vw;
+    padding: 120px 16px; // только внутренние отступы
+    box-sizing: border-box;
     text-align: center;
+    z-index: 1;
+    transform: none;
+    max-height: 100vh; // ключевой момент — не превышать экран
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // центрируем вертикально
+    overflow: hidden; // обрезаем лишнее, если есть
   }
 
   /* Фон внутри контента */
