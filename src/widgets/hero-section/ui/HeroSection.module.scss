@@ -204,7 +204,6 @@
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 600px;
 
     padding: 120px 20px;
     text-align: center;
@@ -213,9 +212,10 @@
   /* Фон внутри контента */
   .heroBg {
     position: absolute;
+    width: 100vw;
     top: 0;
-    left: 0;
-    width: 100%;
+    // left: 0;
+    // right: 0;
     height: 100%;
     background-size: cover;
     background-position: center;
