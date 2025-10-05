@@ -1,0 +1,45 @@
+@use "../../../app/styles/mixins.scss" as *;
+
+.tariffAddOns {
+  display: flex;
+  flex-direction: column;
+}
+
+.tariffsHeading {
+  padding: 0 40px;
+
+  .tariffsHeadingText {
+    @include font-medium;
+    @include text-sm;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background-color: $color-primary;
+    }
+  }
+  h2 {
+    @include font-bold;
+    @include text-3xl;
+    color: $color-secondary;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+  }
+
+  p {
+    @include font-regular;
+    @include text-base;
+    color: $color-secondary;
+    margin: 0;
+    line-height: 1.6;
+  }
+}

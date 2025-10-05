@@ -4,6 +4,7 @@ import styles from "./Prices.module.scss";
 const plans = [
   {
     title: "Лайт",
+    linkId: "tariffLight",
     deal: "Базовый учёт для уверенного старта",
     price: "2 500₽",
     features:
@@ -11,6 +12,7 @@ const plans = [
   },
   {
     title: "Базовый",
+    linkId: "tariffBasic",
     deal: "Всё под контролем",
     price: "7 000₽",
     features:
@@ -18,6 +20,7 @@ const plans = [
   },
   {
     title: "Максимальный",
+    linkId: "tariffMaximum",
     deal: "Максимум заботы о вашем бизнесе",
     price: "15 000₽",
     features:
@@ -42,7 +45,11 @@ export const Prices: FC = () => {
 
         <div className={styles.pricesCards}>
           {plans.map((plan, index) => (
-            <div key={index} className={styles.priceCard}>
+            <a
+              href={`/services#${plan.linkId}`}
+              key={index}
+              className={styles.priceCard}
+            >
               <span className={styles.deal}>{plan.deal}</span>
               <h3>{plan.title}</h3>
               <div className={styles.amount}>
@@ -50,7 +57,7 @@ export const Prices: FC = () => {
                 {plan.price}
               </div>
               <p className={styles.features}>{plan.features}</p>
-            </div>
+            </a>
           ))}
         </div>
       </div>

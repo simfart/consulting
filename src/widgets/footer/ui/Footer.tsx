@@ -21,17 +21,28 @@ export function Footer() {
               <div className={styles.footerSection}>
                 <h4>Разделы</h4>
                 <ul className={styles.footerList}>
-                  <li>Главная</li>
-                  <li>Стоимость услуг</li>
+                  <li>
+                    <a href="/">Главная</a>
+                  </li>
+                  <li>
+                    <a href="/services">Услуги и тарифы</a>
+                  </li>
                 </ul>
               </div>
 
               <div className={styles.footerSection}>
                 <h4 className={styles.footerSubtitle}>Контакты</h4>
                 <ul className={styles.footerList}>
-                  <li>+7 (999) 123-45-67</li>
-                  <li>info@consultpro.ru</li>
-                  <li>Краснодар, ул. Примерная, 123</li>
+                  <li>
+                    <a href="tel:+79991234567">+7 (915) 939-18-13</a>
+                  </li>
+                  <li>
+                    <a href="mailto:info.consultcenter@yandex.ru">
+                      info.consultcenter@ya.ru
+                    </a>
+                  </li>
+
+                  <li>Краснодар, ул.Карасунская, 60</li>
                 </ul>
               </div>
             </div>

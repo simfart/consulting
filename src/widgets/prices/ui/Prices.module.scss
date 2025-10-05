@@ -74,6 +74,7 @@
 }
 
 .priceCard {
+  text-decoration: none;
   position: relative;
   padding: 20px 0 0;
   width: 250px;
@@ -206,12 +207,14 @@
     }
   }
   .priceContent {
-    padding: 0;
+    padding: 70px 0;
   }
   .priceTitle {
     padding-left: 45px;
   }
-
+  .pricesCards {
+    padding: 0;
+  }
   .priceCard {
     padding: 45px;
   }

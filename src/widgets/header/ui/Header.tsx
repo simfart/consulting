@@ -5,7 +5,7 @@ import { logoImg } from "@/shared/images";
 
 const navigation = [
   { name: "Главная", href: "/" },
-  { name: "Услуги и тарифы", href: "/about" },
+  { name: "Услуги и тарифы", href: "/services" },
 ];
 
 export function Header() {

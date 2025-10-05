@@ -51,7 +51,7 @@ const servicesVariants = [
 
 export const Concepts: FC = () => {
   return (
-    <section className={styles.concepts}>
+    <section id="conceptsSection" className={styles.concepts}>
       <div className={styles.geographyImgWrapper}>
         <img
           className={styles.geographyImg}

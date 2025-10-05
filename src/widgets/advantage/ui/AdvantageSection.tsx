@@ -5,7 +5,7 @@ import { Button } from "@/shared/ui";
 
 export const AdvantageSection: FC = () => {
   return (
-    <section id="advantageSection" className={styles.advantageSection}>
+    <section className={styles.advantageSection}>
       <div className={styles.gridLines}>
         <div className={styles.colNoLine}></div>
         {Array.from({ length: 6 }).map((_, i) => (

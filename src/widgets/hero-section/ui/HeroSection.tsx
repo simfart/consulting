@@ -65,7 +65,7 @@ export const HeroSection: FC = () => {
           className={styles.heroButton}
           onClick={() =>
             document
-              .getElementById("advantageSection")
+              .getElementById("conceptsSection")
               ?.scrollIntoView({ behavior: "smooth" })
           }
         >
