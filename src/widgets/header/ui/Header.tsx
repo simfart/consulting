@@ -55,7 +55,7 @@ export function Header() {
             {navigation.map((item) => {
               const isActive =
                 currentPath === item.href ||
-                (item.href !== "/" && currentPath.startsWith(item.href));
+                (item.href !== "/" && currentPath?.startsWith(item.href));
               return (
                 <li key={item.name} className={styles.navItem}>
                   <a

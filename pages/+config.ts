@@ -18,6 +18,27 @@ export default {
     description: {
       env: { server: true, client: true },
     },
+    keywords: {
+      env: { server: true, client: true },
+    },
+    ogTitle: {
+      env: { server: true, client: true },
+    },
+    ogDescription: {
+      env: { server: true, client: true },
+    },
+    ogImage: {
+      env: { server: true, client: true },
+    },
+    twitterTitle: {
+      env: { server: true, client: true },
+    },
+    twitterDescription: {
+      env: { server: true, client: true },
+    },
+    twitterImage: {
+      env: { server: true, client: true },
+    },
     viewport: {
       env: { server: true, client: true },
     },

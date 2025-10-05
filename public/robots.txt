@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Основные страницы
+Allow: /services
+
+# Запрещаем индексацию служебных файлов
+Disallow: /dist/
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /src/
+Disallow: /pages/
+Disallow: /vite.config.ts
+Disallow: /tsconfig.json
+
+# Sitemap
+Sitemap: https://consultcenter.ru/sitemap.xml
+
+# Дополнительные директивы для поисковых систем
+Crawl-delay: 1

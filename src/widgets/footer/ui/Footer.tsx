@@ -4,48 +4,84 @@ import { logoImg } from "@/shared/images";
 
 export function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer
+      className={styles.footer}
+      itemScope
+      itemType="https://schema.org/Organization"
+    >
       <div className={styles.footerTop}>
         <div className={styles.footerContent}>
           <div className={styles.footerCompany}>
             <div className={styles.footerTitle}>
-              <img src={logoImg} alt="logo" />
-              <h3>Консалт</h3> <span>Центр</span>
+              <img
+                src={logoImg}
+                alt="Логотип КонсалтЦентр - бухгалтерские услуги"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+              <h3 itemProp="name">Консалт</h3> <span>Центр</span>
             </div>
-            <p className={styles.footerDescription}>
+            <p className={styles.footerDescription} itemProp="description">
               Профессиональные консалтинговые услуги для вашего бизнеса
             </p>
           </div>
           <div className={styles.footerContainer}>
-            <div className={styles.footerSections}>
+            <nav
+              className={styles.footerSections}
+              aria-label="Навигация по сайту"
+            >
               <div className={styles.footerSection}>
                 <h4>Разделы</h4>
                 <ul className={styles.footerList}>
                   <li>
-                    <a href="/">Главная</a>
+                    <a href="/" aria-label="Перейти на главную страницу">
+                      Главная
+                    </a>
                   </li>
                   <li>
-                    <a href="/services">Услуги и тарифы</a>
+                    <a
+                      href="/services"
+                      aria-label="Перейти к услугам и тарифам"
+                    >
+                      Услуги и тарифы
+                    </a>
                   </li>
                 </ul>
               </div>
 
               <div className={styles.footerSection}>
                 <h4 className={styles.footerSubtitle}>Контакты</h4>
-                <ul className={styles.footerList}>
+                <address
+                  className={styles.footerList}
+                  itemProp="address"
+                  itemScope
+                  itemType="https://schema.org/PostalAddress"
+                >
                   <li>
-                    <a href="tel:+79991234567">+7 (915) 939-18-13</a>
+                    <a
+                      href="tel:+79159391813"
+                      itemProp="telephone"
+                      aria-label="Позвонить по телефону"
+                    >
+                      +7 (915) 939-18-13
+                    </a>
                   </li>
                   <li>
-                    <a href="mailto:info.consultcenter@yandex.ru">
+                    <a
+                      href="mailto:info.consultcenter@yandex.ru"
+                      itemProp="email"
+                      aria-label="Написать на электронную почту"
+                    >
                       info.consultcenter@ya.ru
                     </a>
                   </li>
-
-                  <li>Краснодар, ул.Карасунская, 60</li>
-                </ul>
+                  <li itemProp="streetAddress">
+                    Краснодар, ул.Карасунская, 60
+                  </li>
+                </address>
               </div>
-            </div>
+            </nav>
           </div>
         </div>
 
@@ -53,7 +89,10 @@ export function Footer() {
       </div>
 
       <div className={styles.footerBottom}>
-        <p>&copy; 2024 КонсалтЦентр. Все права защищены.</p>
+        <p>
+          &copy; 2024 <span itemProp="name">КонсалтЦентр</span>. Все права
+          защищены.
+        </p>
         <div className={styles.vline}></div>
       </div>
     </footer>

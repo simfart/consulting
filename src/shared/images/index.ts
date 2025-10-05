@@ -7,7 +7,7 @@ import conceptImg4 from "./consept4.svg";
 import conceptImg5 from "./consept5.svg";
 import conceptImg6 from "./consept6.svg";
 import conceptImg7 from "./consept7.svg";
-import geographyImg from "./mother-russia-05.webp";
+import geographyImg from "./mother-russia-05(1).webp";
 
 export {
   logoImg,
