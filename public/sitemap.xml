@@ -6,16 +6,16 @@
   
   <!-- Главная страница -->
   <url>
-    <loc>https://consultcenter.ru/</loc>
-    <lastmod>2024-12-19</lastmod>
+    <loc>https://myfinbalance.ru/</loc>
+    <lastmod>2025-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- Страница услуг -->
   <url>
-    <loc>https://consultcenter.ru/services</loc>
-    <lastmod>2024-12-19</lastmod>
+    <loc>https://myfinbalance.ru/services</loc>
+    <lastmod>2025-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

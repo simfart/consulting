@@ -14,7 +14,7 @@ interface PageMeta {
 }
 
 interface ExtendedPageContext {
-  meta?: PageMeta;
+  data?: PageMeta;
   urlPathname?: string;
 }
 
@@ -30,7 +30,7 @@ export default function Head() {
     twitterTitle,
     twitterDescription,
     twitterImage,
-  } = pageContext?.meta || {};
+  } = pageContext?.data || {};
 
   return (
     <>

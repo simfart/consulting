@@ -12,7 +12,7 @@ declare module "vike-react/useConfig" {
 
 declare module "vike-react/usePageContext" {
   interface PageContext {
-    meta?: {
+    data?: {
       title?: string;
       description?: string;
       keywords?: string;
