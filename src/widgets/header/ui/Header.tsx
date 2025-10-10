@@ -1,25 +1,38 @@
 import { useState, useEffect, useRef } from "react";
 import { usePageContext } from "vike-react/usePageContext";
 import styles from "./Header.module.scss";
-import { logoImg } from "@/shared/images";
+import { logoImg, phoneImg } from "@/shared/images";
+import { PhoneLink } from "@/shared/ui/Phone";
+import { SocialIcons } from "@/shared/ui";
 
 const navigation = [
+  { name: "+7 (915) 939-18-13", href: "tel:+79159391813" },
   { name: "Главная", href: "/" },
   { name: "Услуги и тарифы", href: "/services" },
 ];
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPhoneMenuOpen, setIsPhoneMenuOpen] = useState(false);
   const pageContext = usePageContext();
   const currentPath = pageContext.urlPathname;
   const headerRef = useRef<HTMLElement>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    if (!isMenuOpen) {
+      setIsPhoneMenuOpen(false);
+    }
+  };
+
+  const togglePhoneMenu = () => {
+    setIsPhoneMenuOpen(!isPhoneMenuOpen);
+    setIsMenuOpen(false);
   };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+    setIsPhoneMenuOpen(false);
   };
 
   useEffect(() => {
@@ -32,14 +45,14 @@ export function Header() {
       }
     };
 
-    if (isMenuOpen) {
+    if (isMenuOpen || isPhoneMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, isPhoneMenuOpen]);
 
   return (
     <header ref={headerRef} className={styles.header}>
@@ -73,6 +86,29 @@ export function Header() {
           </ul>
         </nav>
 
+        <nav
+          className={`${styles.nav} ${isPhoneMenuOpen ? styles.navOpen : ""} ${
+            styles.navPhone
+          }`}
+        >
+          <ul className={styles.navList}>
+            <li className={styles.navPhoneItem}>
+              <PhoneLink />
+              <SocialIcons showText={false} variant="header" />
+            </li>
+          </ul>
+        </nav>
+
+        <button
+          className={`${styles.phoneButton} ${
+            isPhoneMenuOpen ? styles.phoneButtonOpen : ""
+          }`}
+          onClick={togglePhoneMenu}
+          aria-label="Открыть телефонное меню"
+        >
+          <img src={phoneImg} alt="phone" />
+        </button>
+
         <button
           className={`${styles.menuButton} ${
             isMenuOpen ? styles.menuButtonOpen : ""
@@ -85,6 +121,7 @@ export function Header() {
           <span></span>
         </button>
       </div>
+
       <div className={styles.headerVline}></div>
     </header>
   );

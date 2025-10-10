@@ -8,6 +8,7 @@ import conceptImg5 from "./consept5.svg";
 import conceptImg6 from "./consept6.svg";
 import conceptImg7 from "./consept7.svg";
 import geographyImg from "./mother-russia-05(1).webp";
+import phoneImg from "./phoneIcon.svg";
 
 export {
   logoImg,
@@ -19,4 +20,5 @@ export {
   conceptImg6,
   conceptImg7,
   geographyImg,
+  phoneImg,
 };

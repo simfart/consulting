@@ -90,3 +90,42 @@
     transform: scale(1.05);
   }
 }
+
+// Миксин для анимации кнопки телефона
+@mixin phone-animation {
+  img {
+    transition: transform 0.3s ease;
+    transform-origin: center;
+  }
+
+  &.phoneButtonOpen img {
+    animation: ring 0.6s ease-in-out;
+  }
+
+  // 🔹 Дополнительный эффект при наведении
+  &:hover img {
+    transform: rotate(20deg);
+    transition: transform 0.2s ease;
+  }
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(8deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

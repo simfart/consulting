@@ -41,7 +41,7 @@ export const StructuredData: FC<StructuredDataProps> = ({ type, data }) => {
           numberOfEmployees: "5-10",
           areaServed: {
             "@type": "City",
-            name: "Краснодар",
+            name: "Симферополь",
           },
           serviceType: [
             "Бухгалтерские услуги",

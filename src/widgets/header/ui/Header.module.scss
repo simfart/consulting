@@ -119,6 +119,9 @@
   border: none;
   cursor: pointer;
   padding: 8px;
+  height: 41px; // 25px (изображение) + 16px (padding)
+  align-items: center;
+  justify-content: center;
 
   span {
     width: 25px;
@@ -128,6 +131,45 @@
   }
 
   @include hamburger-animation;
+}
+
+.phoneButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+
+  img {
+    width: 25px;
+    height: 25px;
+  }
+
+  @include phone-animation;
+}
+
+.navPhone,
+.phoneButton {
+  display: none;
+}
+
+.navPhoneItem {
+  margin: 0;
+  a {
+    @include font-bold;
+    @include text-2xl;
+    text-decoration: none;
+    color: $color-secondary;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -173,6 +215,9 @@
     flex-direction: column;
     gap: 0;
     padding: 1rem 0;
+    .navItem:first-child {
+      display: none;
+    }
   }
 
   .navItem {
@@ -186,6 +231,10 @@
   }
 
   .menuButton {
+    display: flex;
+  }
+  .navPhone,
+  .phoneButton {
     display: flex;
   }
 }

@@ -1,6 +1,7 @@
-import React from "react";
 import styles from "./Footer.module.scss";
 import { logoImg } from "@/shared/images";
+import { PhoneLink } from "@/shared/ui/Phone";
+import { SocialIcons } from "@/shared/ui/SocialIcons";
 
 export function Footer() {
   return (
@@ -59,13 +60,7 @@ export function Footer() {
                   itemType="https://schema.org/PostalAddress"
                 >
                   <li>
-                    <a
-                      href="tel:+79159391813"
-                      itemProp="telephone"
-                      aria-label="Позвонить по телефону"
-                    >
-                      +7 (915) 939-18-13
-                    </a>
+                    <PhoneLink />
                   </li>
                   <li>
                     <a
