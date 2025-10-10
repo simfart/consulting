@@ -207,13 +207,15 @@
   .concepts {
     padding: 0 45px;
     .geographyImgWrapper {
-      opacity: 1;
+      img {
+        opacity: 0.6;
+      }
     }
 
     .glassEffect {
       background: rgba(255, 255, 255, 0);
       backdrop-filter: none;
-      -webkit-backdrop-filter: blur(1px);
+      -webkit-backdrop-filter: blur(none);
     }
     .gridLines {
       display: flex;
