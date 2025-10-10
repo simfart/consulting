@@ -1,7 +1,6 @@
 import styles from "./Footer.module.scss";
 import { logoImg } from "@/shared/images";
 import { PhoneLink } from "@/shared/ui/Phone";
-import { SocialIcons } from "@/shared/ui/SocialIcons";
 
 export function Footer() {
   return (

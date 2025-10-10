@@ -64,7 +64,7 @@ export const Concepts: FC = () => {
         {Array.from({ length: 10 }).map((_, i) => (
           <div key={i} className={styles.vline} />
         ))}
-        <div className={styles.content}>
+        <div className={`${styles.content} ${styles.glassEffect}`}>
           <div className={styles.contentText}>Наши услуги</div>
           <h2>Бухгалтерский консалтинг</h2>
           <p>
@@ -87,8 +87,8 @@ export const Concepts: FC = () => {
                 <img src={service.icon} alt={service.title} />
               </div>
               <div>
-                <h3>{service.title}</h3>
-                <p>{service.text}</p>
+                <h3 className={styles.glassEffect}>{service.title}</h3>
+                <p className={styles.glassEffect}>{service.text}</p>
               </div>
             </div>
           ))}
