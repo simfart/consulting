@@ -67,7 +67,9 @@ export default function Head() {
       {ogImage && <meta property="og:image" content={ogImage} />}
       <meta
         property="og:url"
-        content={`https://consultcenter.ru${pageContext?.urlPathname || ""}`}
+        content={`https://myfinbalance.ru${
+          pageContext?.urlPathname === "/" ? "" : pageContext?.urlPathname || ""
+        }`}
       />
 
       {/* Twitter Card мета-теги */}
@@ -91,7 +93,9 @@ export default function Head() {
       {/* Канонический URL */}
       <link
         rel="canonical"
-        href={`https://consultcenter.ru${pageContext?.urlPathname || ""}`}
+        href={`https://myfinbalance.ru${
+          pageContext?.urlPathname === "/" ? "" : pageContext?.urlPathname || ""
+        }`}
       />
 
       {/* Favicon и иконки */}

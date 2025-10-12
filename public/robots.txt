@@ -14,7 +14,7 @@ Disallow: /vite.config.ts
 Disallow: /tsconfig.json
 
 # Sitemap
-Sitemap: https://consultcenter.ru/sitemap.xml
+Sitemap: https://myfinbalance.ru/sitemap.xml
 
 # Дополнительные директивы для поисковых систем
 Crawl-delay: 1
