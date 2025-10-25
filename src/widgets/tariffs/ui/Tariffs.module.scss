@@ -7,12 +7,15 @@
 }
 
 .tariffsHeading {
-  padding: 0 40px;
+  padding: 0 45px;
+
+  @include mobile {
+    padding: 0 15px;
+  }
 
   .tariffsHeadingText {
     @include font-medium;
     @include text-sm;
-
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 20px;

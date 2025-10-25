@@ -3,7 +3,7 @@ import styles from "./Button.module.scss";
 
 interface ButtonProps {
   children: React.ReactNode;
-  variant?: "hero";
+  variant?: "hero" | "light";
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;

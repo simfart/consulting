@@ -39,3 +39,22 @@
     transform: translateY(-2px);
   }
 }
+
+.light {
+  @include font-semibold;
+  @include text-sm;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 24px;
+  background-color: $background-light;
+  color: $color-primary;
+  border: 1px solid $color-primary;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+  }
+}

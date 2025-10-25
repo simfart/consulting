@@ -3,11 +3,14 @@
 .tariffAddOns {
   display: flex;
   flex-direction: column;
+  padding: 0 45px;
+
+  @include mobile {
+    padding: 0 15px;
+  }
 }
 
 .tariffsHeading {
-  padding: 0 40px;
-
   .tariffsHeadingText {
     @include font-medium;
     @include text-sm;
@@ -41,5 +44,101 @@
     color: $color-secondary;
     margin: 0;
     line-height: 1.6;
+  }
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.category {
+  padding: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.categoryTitle {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+  img {
+    width: 60px;
+    height: 60px;
+  }
+  h3 {
+    @include text-xl;
+    @include font-regular;
+    line-height: 1.2;
+  }
+  p {
+    font-weight: 300;
+    @include text-base;
+    margin: 0;
+  }
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  font-weight: 600;
+  padding: 12px 16px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 12px 16px;
+  align-items: center;
+}
+
+.name {
+  font-size: 15px;
+  line-height: 1.4;
+  padding-right: 10px;
+}
+
+.price {
+  color: $color-primary;
+  @include text-base;
+  @include font-medium;
+  white-space: nowrap;
+  padding-left: 10px;
+  border-left: 2px solid $color-primary;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+
+  // Делаем кнопки одинакового размера
+  button {
+    flex: 1;
+    min-width: 0; // Позволяет кнопкам сжиматься при необходимости
+  }
+}
+
+.orderIcon {
+  width: 20px;
+  height: 20px;
+}
+
+@include mobile {
+  .services {
+    padding: 0;
+  }
+  .category {
+    padding: 24px 0;
   }
 }
