@@ -1,5 +1,5 @@
 // @ts-ignore
-import logoImg from "./Owl_colorPrimary_gradient_cut.png";
+import logoImg from "./favicon.ico";
 import conceptImg from "./consept1.svg";
 import conceptImg2 from "./consept2.svg";
 import conceptImg3 from "./consept3.svg";

@@ -58,6 +58,9 @@ export function Header() {
     <header ref={headerRef} className={styles.header}>
       <a href="/" className={styles.logo}>
         <img src={logoImg} alt="logo" />
+        <div className={styles.headerTitleMobile}>
+          <h3>Консалт</h3> <span>Центр</span>
+        </div>
       </a>
       <div className={styles.headerContent}>
         <div className={styles.headerTitle}>

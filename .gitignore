@@ -89,4 +89,7 @@ jspm_packages/
 .dynamodb/
 
 # TernJS port file
-.tern-port 
+.tern-port
+
+# Google verification files
+public/google*.html 

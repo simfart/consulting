@@ -14,6 +14,11 @@
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(10px);
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
 }
 
 .headerVline {
@@ -23,9 +28,9 @@
 }
 
 .logo {
-  @include logo-style;
   justify-self: center;
   grid-column: 1;
+  @include logo-style;
 }
 
 .headerContent {
@@ -35,28 +40,55 @@
   display: flex;
   justify-content: space-between;
   align-items: end;
+
+  @media (max-width: 768px) {
+    border: none;
+    padding: 5px 0 5px;
+    align-items: center;
+  }
 }
 
 .headerTitle {
   display: flex;
   flex-direction: row;
-
   line-height: 1;
 
   h3 {
     margin: 0;
   }
-
   span {
     color: $color-primary;
   }
-
   h3,
   span {
     font-size: 24px;
     font-weight: 400;
   }
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
+
+.headerTitleMobile {
+  display: none;
+  margin-left: 5px;
+  h3 {
+    margin: 0;
+    color: $color-secondary;
+  }
+  span {
+    color: $color-primary;
+  }
+  h3,
+  span {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  @media (max-width: 768px) {
+    display: flex;
+  }
+}
+
 .nav {
   display: flex;
   justify-self: end;
@@ -173,23 +205,17 @@
 }
 
 @media (max-width: 768px) {
-  .header {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 15px;
-  }
-
   .headerVline {
     display: none;
   }
 
-  .headerTitle {
-    display: none;
-  }
-  .headerContent {
-    border: none;
-    padding: 10px 0 10px;
-  }
+  // .headerTitle {
+  //   display: none;
+  // }
+  // .headerContent {
+  //   border: none;
+  //   padding: 10px 0 10px;
+  // }
   .nav {
     position: fixed;
     top: 100%;
