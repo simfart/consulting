@@ -16,8 +16,8 @@ export const StructuredData: FC<StructuredDataProps> = ({ type, data }) => {
           alternateName: "ConsultCenter",
           description:
             "Профессиональные консалтинговые и бухгалтерские услуги для бизнеса",
-          url: "https://consultcenter.ru",
-          logo: "https://consultcenter.ru/images/Logo.png",
+          url: "https://myfinbalance.ru",
+          logo: "https://myfinbalance.ru/images/Logo.png",
           address: {
             "@type": "PostalAddress",
             streetAddress: "ул. Карасунская, 60",
@@ -61,7 +61,7 @@ export const StructuredData: FC<StructuredDataProps> = ({ type, data }) => {
           provider: {
             "@type": "Organization",
             name: "КонсалтЦентр",
-            url: "https://consultcenter.ru",
+            url: "https://myfinbalance.ru",
           },
           areaServed: {
             "@type": "City",
@@ -84,7 +84,7 @@ export const StructuredData: FC<StructuredDataProps> = ({ type, data }) => {
           "@type": "ProfessionalService",
           name: "КонсалтЦентр",
           description: "Бухгалтерские и консалтинговые услуги в Краснодаре",
-          url: "https://consultcenter.ru",
+          url: "https://myfinbalance.ru",
           telephone: "+7-915-939-18-13",
           email: "info.consultcenter@yandex.ru",
           address: {

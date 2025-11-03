@@ -12,11 +12,11 @@ function data() {
       "Бухгалтерские услуги по всей РФ, в Крыму, Севастополе, ЛДНР, Херсонской и Запорожской областях",
     ogDescription:
       "Бухгалтерские услуги для ИП, ООО и самозанятых по всей РФ, а также в Крыму, Севастополе, ЛДНР, Херсонской и Запорожской областях. Полное ведение учета и сдача отчетности.",
-    ogImage: "https://consultcenter.ru/images/og-image.jpg",
+    ogImage: "https://myfinbalance.ru/images/og-image.jpg",
     twitterTitle:
       "Бухгалтерские услуги по всей РФ, в Крыму, Севастополе, ЛДНР, Херсонской и Запорожской областях",
     twitterDescription:
       "Бухгалтерские услуги для ИП, ООО и самозанятых по всей РФ, а также в Крыму, Севастополе, ЛДНР, Херсонской и Запорожской областях. Полное ведение учета и сдача отчетности.",
-    twitterImage: "https://consultcenter.ru/images/twitter-image.jpg",
+    twitterImage: "https://myfinbalance.ru/images/twitter-image.jpg",
   };
 }

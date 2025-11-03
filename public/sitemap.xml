@@ -7,7 +7,7 @@
   <!-- Главная страница -->
   <url>
     <loc>https://myfinbalance.ru/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
   <!-- Страница услуг -->
   <url>
     <loc>https://myfinbalance.ru/services</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

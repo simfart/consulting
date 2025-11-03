@@ -10,10 +10,10 @@ function data() {
     ogTitle: "Тарифы на бухгалтерские услуги | КонсалтЦентр",
     ogDescription:
       "Прозрачные тарифы на бухгалтерские услуги в Краснодаре. Выберите подходящий пакет услуг.",
-    ogImage: "https://consultcenter.ru/images/og-services.jpg",
+    ogImage: "https://myfinbalance.ru/images/og-services.jpg",
     twitterTitle: "Тарифы на бухгалтерские услуги | КонсалтЦентр",
     twitterDescription:
       "Прозрачные тарифы на бухгалтерские услуги в Краснодаре.",
-    twitterImage: "https://consultcenter.ru/images/twitter-services.jpg",
+    twitterImage: "https://myfinbalance.ru/images/twitter-services.jpg",
   };
 }
