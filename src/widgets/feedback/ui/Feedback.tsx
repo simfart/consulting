@@ -8,10 +8,19 @@ export const Feedback: FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState(false);
   const [phone, setPhone] = useState("");
+  const [consent, setConsent] = useState(true);
+  const [showError, setShowError] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formRef.current) return;
+
+    if (!consent) {
+      setShowError(true);
+      return;
+    }
+
+    setShowError(false);
     setLoading(true);
 
     emailjs
@@ -24,6 +33,7 @@ export const Feedback: FC = () => {
       .then(() => {
         alert("Ваша заявка отправлена!");
         formRef.current?.reset();
+        setConsent(true);
       })
       .catch((err) => {
         console.error(err);
@@ -31,7 +41,6 @@ export const Feedback: FC = () => {
       })
       .finally(() => setLoading(false));
   };
-
   return (
     <section id="feedbackSection" className={styles.feedback}>
       <div className={styles.gridLines}>
@@ -76,6 +85,31 @@ export const Feedback: FC = () => {
             rows={1}
           />
           <div className={styles.feedbackButton}>
+            <div className={styles.checkboxWrapper}>
+              <label className={styles.checkboxLabel}>
+                <input
+                  type="checkbox"
+                  name="consent"
+                  checked={consent}
+                  onChange={() => setConsent(!consent)}
+                  className={styles.checkboxInput}
+                />
+                <span className={styles.customCheckbox}></span>
+                <span>
+                  Подтверждаю согласие на обработку персональных данных.
+                  Подробнее в{" "}
+                  <a href="/privacy" className={styles.privacyLink}>
+                    Политике конфиденциальности.
+                  </a>
+                </span>
+              </label>
+              {!consent && showError && (
+                <span className={styles.errorMessage}>
+                  Подтвердите согласие на обработку персональных данных!
+                </span>
+              )}
+            </div>
+
             <Button type="submit" disabled={loading}>
               {loading ? "Отправка..." : "Отправить заявку"}
               <ArrowRight />
