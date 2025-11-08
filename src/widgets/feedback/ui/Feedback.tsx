@@ -84,36 +84,36 @@ export const Feedback: FC = () => {
             placeholder="Комментарий"
             rows={1}
           />
-          <div className={styles.feedbackButton}>
-            <div className={styles.checkboxWrapper}>
-              <label className={styles.checkboxLabel}>
-                <input
-                  type="checkbox"
-                  name="consent"
-                  checked={consent}
-                  onChange={() => setConsent(!consent)}
-                  className={styles.checkboxInput}
-                />
-                <span className={styles.customCheckbox}></span>
-                <span>
-                  Подтверждаю согласие на обработку персональных данных.
-                  Подробнее в{" "}
-                  <a href="/privacy" className={styles.privacyLink}>
-                    Политике конфиденциальности.
-                  </a>
-                </span>
-              </label>
-              {!consent && showError && (
-                <span className={styles.errorMessage}>
-                  Подтвердите согласие на обработку персональных данных!
-                </span>
-              )}
-            </div>
+          <div className={styles.checkboxWrapper}>
+            {!consent && showError && (
+              <span className={styles.errorMessage}>
+                Подтвердите согласие на обработку персональных данных!
+              </span>
+            )}
+            <label className={styles.checkboxLabel}>
+              <input
+                type="checkbox"
+                name="consent"
+                checked={consent}
+                onChange={() => setConsent(!consent)}
+                className={styles.checkboxInput}
+              />
+              <span className={styles.customCheckbox}></span>
+              <span>
+                Подтверждаю согласие на обработку персональных данных. Подробнее
+                в{" "}
+                <a href="/privacy" className={styles.privacyLink}>
+                  Политике конфиденциальности.
+                </a>
+              </span>
+            </label>
 
-            <Button type="submit" disabled={loading}>
-              {loading ? "Отправка..." : "Отправить заявку"}
-              <ArrowRight />
-            </Button>
+            <div className={styles.feedbackButton}>
+              <Button type="submit" disabled={loading}>
+                {loading ? "Отправка..." : "Отправить заявку"}
+                <ArrowRight />
+              </Button>
+            </div>
           </div>
         </form>
       </div>
