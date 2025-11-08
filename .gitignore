@@ -91,5 +91,6 @@ jspm_packages/
 # TernJS port file
 .tern-port
 
-# Google verification files
-public/google*.html 
+# Verification files (Yandex, Google) - не загружаются в git, но копируются при сборке
+public/google*.html
+public/yandex*.html 
