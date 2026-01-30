@@ -57,6 +57,9 @@ export const Concepts: FC = () => {
           className={styles.geographyImg}
           src={geographyImg}
           alt="geography"
+          loading="lazy"
+          width="1920"
+          height="1080"
         />
       </div>
       <div className={styles.gridLines}>

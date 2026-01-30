@@ -98,6 +98,8 @@ export default function Head() {
         }`}
       />
 
+      {/* Resource hints для оптимизации загрузки */}
+
       {/* Favicon и иконки */}
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
