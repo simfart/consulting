@@ -17,7 +17,7 @@ $border-color: #d9d9d9;
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  perspective: 1000px; /* Для 3D-тени */
+  perspective: 1000px;
 }
 
 .title {
@@ -83,7 +83,6 @@ $border-color: #d9d9d9;
     no-repeat center;
 }
 
-/* ---------- Мобильная адаптация ---------- */
 @media (max-width: 768px) {
   .title {
     font-size: 8em;
@@ -98,6 +97,9 @@ $border-color: #d9d9d9;
 }
 
 @media (max-width: 480px) {
+  .section {
+    min-height: 80vh;
+  }
   .title {
     font-size: 5em;
   }
