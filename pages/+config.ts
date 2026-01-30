@@ -4,6 +4,9 @@ export default {
   // Включаем пререндеринг
   prerender: true,
 
+  // Включаем клиентский роутинг для обработки 404
+  clientRouting: true,
+
   // Настройки для React
   extends: [vikeReact],
 
@@ -42,10 +45,5 @@ export default {
     viewport: {
       env: { server: true, client: true },
     },
-  },
-
-  // Глобальный Head компонент
-  Head: {
-    env: { server: true, client: true },
   },
 };

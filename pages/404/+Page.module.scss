@@ -1,0 +1,111 @@
+$color-primary: #998861;
+$color-secondary: #222220;
+$text-color: #222220;
+$text-light: #66727e;
+$white: #ffffff;
+$background-light: #f5f6f3;
+$border-color: #d9d9d9;
+
+.section {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  color: $text-color;
+  background-color: $background-light;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  perspective: 1000px; /* Для 3D-тени */
+}
+
+.title {
+  font-size: 15em;
+  font-weight: 100;
+  margin: 0;
+  line-height: 1;
+  color: $color-primary;
+  position: relative;
+
+  text-shadow: 0 0 0 $color-primary, 0 10px 5px rgba(0, 0, 0, 0.1),
+    0 20px 10px rgba(0, 0, 0, 0.1), 0 30px 15px rgba(0, 0, 0, 0.15),
+    0 40px 20px rgba(0, 0, 0, 0.2);
+
+  animation: floatShadow 2s ease-in-out infinite alternate;
+}
+
+@keyframes floatShadow {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) translateY(0);
+  }
+  50% {
+    transform: rotateX(5deg) rotateY(-5deg) translateY(-10px);
+  }
+  100% {
+    transform: rotateX(-5deg) rotateY(5deg) translateY(10px);
+  }
+}
+
+.text {
+  font-size: 2em;
+  font-weight: 300;
+  color: $text-light;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.button {
+  font-weight: 300;
+  color: $white;
+  font-size: 1.2em;
+  text-decoration: none;
+  border: 1px solid $border-color;
+  background-color: $color-primary;
+  padding: 0.5em 1em;
+  border-radius: 3px;
+  transition: all 0.3s linear;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.button:hover {
+  background-color: #87734f;
+}
+
+.iconHome {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background: url("data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHBhdGggZD0iTTggMS4yTDExLjggNC4xVjEySDEwVjguNUg2VjEySDEuNlY0LjFsNi42LTMuOWwuNCAuMXoiLz48L3N2Zz4=")
+    no-repeat center;
+}
+
+/* ---------- Мобильная адаптация ---------- */
+@media (max-width: 768px) {
+  .title {
+    font-size: 8em;
+  }
+  .text {
+    font-size: 1.5em;
+  }
+  .button {
+    font-size: 1em;
+    padding: 0.5em 0.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 5em;
+  }
+  .text {
+    font-size: 1.2em;
+  }
+  .button {
+    font-size: 0.9em;
+    padding: 0.4em 0.6em;
+  }
+}

@@ -1,0 +1,17 @@
+# Apache конфигурация для SPA fallback и 404
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # Обработка 404 ошибок
+  ErrorDocument 404 /404.html
+  
+  # Не перенаправляем существующие файлы и директории
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  
+  # Перенаправляем все остальное на index.html для SPA
+  RewriteRule ^ /index.html [L]
+</IfModule>
+
